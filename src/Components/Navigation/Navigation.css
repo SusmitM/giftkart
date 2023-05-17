@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
+  
+ 
 
 }
 
@@ -128,6 +130,7 @@
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    cursor: pointer;
   }
   
   

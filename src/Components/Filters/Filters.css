@@ -1,0 +1,170 @@
+.filter-box{
+    position: absolute;
+    color: white ;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 150px;
+    margin-top: 70px;
+    border-right: 1px solid gray;
+
+}
+.filter-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    color: rgb(61, 57, 57);
+    font-size: 0.65rem;
+    font-weight: 500;
+    
+}
+
+
+.filter-heading{
+    margin: 1px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: black;
+    
+}
+.filter-title{
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.clearBtn{
+    margin-left: 30px;
+    font-size: 9px;
+    font-family: monospace;
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    padding: 4px;
+    
+}
+.closeBtn{
+    display: flex;
+    margin: auto;
+    font-size: 10px;
+    font-family: monospace;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: 500;
+
+}
+
+
+
+/* //Media Queries */
+
+
+@media (min-width:768px){
+    .filter-box{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        top:0;
+        left: 0;
+        height: 100vh;
+        width: 200px;
+    
+    }
+    .filter-container{
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        color: grey;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+    
+    .filter-heading{
+        margin: 5px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: black;
+        
+    }
+    .clearBtn{
+        margin-left: 40px;
+        font-size: 10px;
+        font-family: monospace;
+        background-color: red;
+        color: white;
+        border-radius: 20px;
+        padding: 6px;
+        
+    }
+    .filter-title{
+        color: black;
+        font-size: 0.85rem;
+        font-weight: 550;
+    }
+    .closeBtn{
+        display: flex;
+        margin: auto;
+         font-size: 12px;
+         font-family: monospace;
+         background-color: red;
+        color: white;
+        font-weight: 550;
+        border-radius: 10px;
+        padding: 10px;
+       
+       
+    
+    }
+    
+}
+
+
+@media (min-width:1024px){
+    .filter-box{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        top:0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+    
+    }
+    .filter-container{
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        color: grey;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .filter-heading{
+        margin: 5px;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: black;
+        
+    }
+    .clearBtn{
+        margin-left: 60px;
+        font-size: 12px;
+        font-family: monospace;
+        background-color: red;
+        color: white;
+        border-radius: 20px;
+        padding: 6px;
+        
+    }
+    .filter-title{
+        color: black;
+        font-size: 1rem;
+        font-weight: 550;
+    }
+    .closeBtn{
+    display: none;
+
+    }
+
+}

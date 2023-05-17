@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Navigation from "./Components/Navigation/Navigation";
+import {Navigation} from "./Components";
 import AppRoutes from "./Routes/AppRoutes";
 
 function App() {

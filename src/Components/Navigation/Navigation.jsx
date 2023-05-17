@@ -6,7 +6,7 @@ import { BsHeart,BsPerson,BsGift} from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
 
 
-const Navigation = () => {
+export const Navigation = () => {
   const navigate=useNavigate();
  
   return (
@@ -18,7 +18,7 @@ const Navigation = () => {
         <li className="nav-category-link">Sports</li>
         <li className="nav-category-link">
           <div class="dropdown">
-    <button class="dropbtn">All Products<IoIosArrowDown/></button>
+    <button class="dropbtn" onClick={()=>navigate("/products")} >All Products<IoIosArrowDown/></button>
     <div class="dropdown-content">
       <a href="#">Mugs</a>
       <a href="#">Frames</a>
@@ -43,4 +43,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+
