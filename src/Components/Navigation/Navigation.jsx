@@ -17,9 +17,9 @@ export const Navigation = () => {
       <li className="nav-category-link">Cartoon</li>
         <li className="nav-category-link">Sports</li>
         <li className="nav-category-link">
-          <div class="dropdown">
-    <button class="dropbtn" onClick={()=>navigate("/products")} >All Products<IoIosArrowDown/></button>
-    <div class="dropdown-content">
+          <div className="dropdown">
+    <button className="dropbtn" onClick={()=>navigate("/products")} >All Products<IoIosArrowDown/></button>
+    <div className="dropdown-content">
       <a href="#">Mugs</a>
       <a href="#">Frames</a>
       <a href="#">Magnets</a>

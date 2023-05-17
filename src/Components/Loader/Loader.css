@@ -1,0 +1,42 @@
+.loader-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.loader-div img{
+    height: 150px;
+    width: 150px;
+}
+
+
+/* // Media Queries */
+
+@media only screen and (min-width:768px) {
+    .loader-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .loader-div img{
+        height: 250px;
+        width: 250px;
+    }
+    
+    
+}
+@media only screen and (min-width:1024px) {
+    .loader-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .loader-div img{
+        height: 300px;
+        width: 300px;
+    }
+    
+    
+}

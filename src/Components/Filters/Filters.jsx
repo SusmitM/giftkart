@@ -29,14 +29,14 @@ export const Filters = ({toggleFilterDisplay}) => {
 
       <div className="price-range-filter">
         <span className="filter-title">Price :</span>
-        <div class="slidecontainer">
+        <div className="slidecontainer">
       <input type="range" min="100" max="1000" value="500" className="slider"/>
       </div>
         <hr/>
       </div>
       <div className="category-filter">
         <span className="filter-title">Categories :</span>
-        <div class="category-value-container" style={{display:"flex",flexDirection:"column"}}>
+        <div className="category-value-container" style={{display:"flex",flexDirection:"column"}}>
           <label>
             <input type="checkbox" value="sport" name="sport" />
             Sport
@@ -61,7 +61,7 @@ export const Filters = ({toggleFilterDisplay}) => {
       <div className="availability-filter">
         <span className="filter-title">Availability :</span>
        
-        <div class="availability-value-container" style={{display:"flex",flexDirection:"column"}}>
+        <div className="availability-value-container" style={{display:"flex",flexDirection:"column"}}>
           <label>
             <input type="checkbox" value="outOfStock" name="outOfStock" />
             Out of Stock
@@ -77,7 +77,7 @@ export const Filters = ({toggleFilterDisplay}) => {
 
       <div className="prodType-filter">
         <span className="filter-title">Type Of :</span>
-        <div class="prodType-value-container" style={{display:"flex",flexDirection:"column"}}>
+        <div className="prodType-value-container" style={{display:"flex",flexDirection:"column"}}>
           <label>
             <input type="checkbox" value="mug" name="mug" />
             Mugs
