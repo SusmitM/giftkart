@@ -1,12 +1,14 @@
 .filter-box{
-    position: absolute;
-    color: white ;
-    top:0;
+    position: fixed;
+    color: white;
+    top: 0;
     left: 0;
     height: 100vh;
-    width: 150px;
-    margin-top: 70px;
+    width: 100%;
+    margin-top: 80px;
     border-right: 1px solid gray;
+    transition: transform 0.3s ease-in-out;
+    background-color:white;
 
 }
 .filter-container{
@@ -14,23 +16,23 @@
     flex-direction: column;
     padding: 0px;
     color: rgb(61, 57, 57);
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 550;
     
 }
 
 
 .filter-heading{
     margin: 1px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: black;
     
 }
 .filter-title{
     color: black;
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 550;
 }
 .clearBtn{
     margin-left: 30px;
