@@ -1,4 +1,4 @@
-.filter-box{
+.filter-box {
     position: fixed;
     color: white;
     top: 0;
@@ -6,54 +6,60 @@
     height: 100vh;
     width: 100%;
     margin-top: 80px;
-    border-right: 1px solid gray;
     transition: transform 0.3s ease-in-out;
-    background-color:white;
+    background-color: white;
+
 
 }
-.filter-container{
+
+.filter-container {
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    padding: 10px;
     color: rgb(61, 57, 57);
     font-size: 0.7rem;
     font-weight: 550;
-    
+
+
 }
 
 
-.filter-heading{
+.filter-heading {
     margin: 1px;
     font-size: 1.1rem;
     font-weight: 500;
     color: black;
-    
+
 }
-.filter-title{
+
+.filter-title {
     color: black;
     font-size: 0.8rem;
     font-weight: 550;
 }
-.clearBtn{
+
+.clearBtn {
     margin-left: 30px;
-    font-size: 9px;
-    font-family: monospace;
-    background-color: red;
     color: white;
-    border-radius: 15px;
-    padding: 4px;
-    
+    font-size: 0.70rem;
+    border-radius: 11px;
+    padding: 5px;
+    background-color: red;
+    font-weight: 500;
+    font-family: sans-serif;
 }
-.closeBtn{
+
+.closeBtn {
     display: flex;
     margin: auto;
-    font-size: 10px;
-    font-family: monospace;
     background-color: red;
     color: white;
+    font-size: 0.80rem;
     border-radius: 10px;
-    padding: 8px;
-    font-weight: 500;
+    padding: 6px;
+    background-color: red;
+    font-weight: 600;
+    font-family: sans-serif;
 
 }
 
@@ -62,18 +68,22 @@
 /* //Media Queries */
 
 
-@media (min-width:768px){
-    .filter-box{
-        display: flex;
-        flex-direction: column;
-        margin-top: 50px;
-        top:0;
+@media (min-width:768px) {
+    .filter-box {
+        position: fixed;
+        color: white;
+        top: 0;
         left: 0;
         height: 100vh;
-        width: 200px;
-    
+        width: 100%;
+        margin-top: 80px;
+        transition: transform 0.3s ease-in-out;
+        background-color: white;
+
+
     }
-    .filter-container{
+
+    .filter-container {
         display: flex;
         flex-direction: column;
         padding: 12px;
@@ -81,59 +91,65 @@
         font-size: 0.95rem;
         font-weight: 500;
     }
-    
-    .filter-heading{
+
+    .filter-heading {
         margin: 5px;
         font-size: 1.15rem;
         font-weight: 600;
         color: black;
-        
+
     }
-    .clearBtn{
-        margin-left: 40px;
-        font-size: 10px;
-        font-family: monospace;
-        background-color: red;
+
+    .clearBtn {
+        margin-left: 30px;
         color: white;
-        border-radius: 20px;
-        padding: 6px;
-        
+        font-size: 0.9rem;
+        border-radius: 25px;
+        padding: 9px;
+        background-color: red;
+        font-weight: 500;
+        font-family: sans-serif;
     }
-    .filter-title{
+
+    
+
+    .filter-title {
         color: black;
         font-size: 0.85rem;
         font-weight: 550;
     }
-    .closeBtn{
+
+    .closeBtn {
         display: flex;
         margin: auto;
-         font-size: 12px;
-         font-family: monospace;
-         background-color: red;
+        background-color: red;
         color: white;
-        font-weight: 550;
-        border-radius: 10px;
+        font-size: 1.5rem;
+        border-radius: 30px;
         padding: 10px;
-       
-       
-    
+        background-color: red;
+        font-weight: 550;
+        font-family: sans-serif;
+
+
     }
-    
+
 }
 
 
-@media (min-width:1024px){
-    .filter-box{
+@media (min-width:1024px) {
+    .filter-box {
         display: flex;
         flex-direction: column;
         margin-top: 50px;
-        top:0;
+        top: 0;
         left: 0;
         height: 100vh;
         width: 250px;
-    
+
     }
-    .filter-container{
+
+    .filter-container {
         display: flex;
         flex-direction: column;
         padding: 15px;
@@ -141,15 +157,16 @@
         font-size: 1rem;
         font-weight: 500;
     }
-    
-    .filter-heading{
+
+    .filter-heading {
         margin: 5px;
         font-size: 1.25rem;
         font-weight: 600;
         color: black;
-        
+
     }
-    .clearBtn{
+
+    .clearBtn {
         margin-left: 60px;
         font-size: 12px;
         font-family: monospace;
@@ -157,15 +174,17 @@
         color: white;
         border-radius: 20px;
         padding: 6px;
-        
+
     }
-    .filter-title{
+
+    .filter-title {
         color: black;
         font-size: 1rem;
         font-weight: 550;
     }
-    .closeBtn{
-    display: none;
+
+    .closeBtn {
+        display: none;
 
     }
 

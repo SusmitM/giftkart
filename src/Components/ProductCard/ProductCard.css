@@ -1,0 +1,389 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 460px;
+    width: 310px;
+    margin-bottom: 45px;
+    text-align: center;
+    font-family: -apple-system,
+        BlinkMacSystemFont, sans-serif;
+}
+
+.product-image-section img {
+    height: 325px;
+    width: 310px;
+
+}
+
+.wishlist-btn {
+    color: red;
+    position: absolute;
+    right: 0;
+    left: 280px;
+
+}
+
+.product-details-section {
+    display: contents;
+
+}
+
+.out-of-stock-label {
+    font-weight: 600;
+    font-family: system-ui;
+    position: absolute;
+    background-color: rgb(113 60 223);
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 6px;
+}
+
+.product-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 550;
+    word-spacing: 8px;
+}
+
+.add-toCart-btn {
+    font-size: 1.4rem;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border: 1px solid #b79494;
+    font-family: inherit;
+}
+
+.add-toCart-btn:hover {
+    background-color: black;
+    color: white;
+
+
+}
+
+.originalPrice {
+    text-decoration: line-through;
+    color: grey;
+
+}
+
+.fast-delivery-label {
+    font-weight: 600;
+    font-family: system-ui;
+    position: absolute;
+    background-color: green;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 6px;
+}
+
+.product-rating {
+    text-align: initial;
+    background-color: green;
+    width: fit-content;
+    padding: 6px 15px;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+
+.overlay-singleProduct {
+    position: relative;
+    bottom: 50px;
+    height: 0;
+    width: 10%;
+    left: 19px;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 50%;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: white;
+    transition: .5s ease;
+    display: none;
+    text-align: center;
+
+}
+
+.product-card:hover .overlay-singleProduct {
+    display: inline-table;
+
+}
+
+.overlay-singleProduct:hover {
+    background-color: black;
+    color: white;
+}
+
+.tooltip{
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+    padding:8px;
+    font-weight: 550;
+    border-radius: 5px;
+
+}
+
+/* //Media Queries */
+
+@media (min-width:768px) {
+    .wishlist-btn {
+        color: red;
+        position: relative;
+        bottom: 437px;
+        left: 137px;
+    }
+
+    .overlay-singleProduct {
+        display: none;
+    }
+    .product-name {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .product-price {
+        font-size: 1rem;
+        font-weight: 500;
+        word-spacing: 8px;
+    }
+
+    .add-toCart-btn {
+        font-size: 0.9rem;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        border: 1px solid #b79494;
+        font-family: inherit;
+    }
+
+    .add-toCart-btn:hover {
+        background-color: black;
+        color: white;
+
+
+    }
+
+    .originalPrice {
+        text-decoration: line-through;
+        color: grey;
+
+    }
+
+    .fast-delivery-label {
+    font-weight: 500;
+    font-family: system-ui;
+    position: absolute;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 9px;
+    margin: 3px;
+    }
+
+    .product-rating {
+        text-align: initial;
+        font-size: 0.75rem;
+        background-color: green;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 3px 6px;
+        color: white;
+        font-weight: 500;
+        border-radius: 11px
+    }
+    
+    .overlay-singleProduct {
+        position: relative;
+        bottom: 50px;
+        height: 0;
+        width: 10%;
+        left: 19px;
+        overflow: hidden;
+        padding: 15px;
+        border-radius: 50%;
+        width: -moz-fit-content;
+        width: fit-content;
+        background-color: white;
+        transition: .5s ease;
+        display: none;
+        text-align: center;
+
+    }
+
+    .product-card:hover .overlay-singleProduct {
+        display: inline-table;
+
+    }
+
+    .overlay-singleProduct:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .tooltip{
+        background-color: black;
+        color: white;
+        font-size: 0.8rem;
+        padding:8px;
+        font-weight: 550;
+        border-radius: 5px;
+
+    }
+
+
+}
+
+@media (min-width:1024px) {
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 370px;
+        width: 270px;
+        margin-bottom: 45px;
+        text-align: center;
+        font-family: -apple-system,
+            BlinkMacSystemFont, sans-serif;
+    }
+
+    .product-image-section img {
+        height: 220px;
+        width: 270px;
+
+    }
+
+    .wishlist-btn {
+    color: red;
+    bottom: 338px;
+    left: 114px;
+
+    }
+
+    .product-details-section {
+        display: contents;
+
+    }
+
+    .out-of-stock-label {
+        font-weight: 500;
+        font-family: system-ui;
+        position: absolute;
+        background-color: rgb(113 60 223);
+        color: white;
+        padding: 5px;
+        border-radius: 9px;
+        margin: 3px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+        font-weight: 500;
+        word-spacing: 8px;
+    }
+
+    .add-toCart-btn {
+        font-size: 1rem;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        border: 1px solid #b79494;
+        font-family: inherit;
+    }
+
+    .add-toCart-btn:hover {
+        background-color: black;
+        color: white;
+
+
+    }
+
+    .originalPrice {
+        text-decoration: line-through;
+        color: grey;
+
+    }
+
+    .fast-delivery-label {
+    font-weight: 500;
+    font-family: system-ui;
+    position: absolute;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 9px;
+    margin: 3px;
+    }
+
+    .product-rating {
+        text-align: initial;
+        font-size: 0.75rem;
+        background-color: green;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 3px 6px;
+        color: white;
+        font-weight: 500;
+        border-radius: 11px
+    }
+
+    .overlay-singleProduct {
+        position: relative;
+        bottom: 50px;
+        height: 0;
+        width: 10%;
+        left: 19px;
+        overflow: hidden;
+        padding: 15px;
+        border-radius: 50%;
+        width: -moz-fit-content;
+        width: fit-content;
+        background-color: white;
+        transition: .5s ease;
+        display: none;
+        text-align: center;
+
+    }
+
+    .product-card:hover .overlay-singleProduct {
+        display: inline-table;
+
+    }
+
+    .overlay-singleProduct:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .tooltip{
+        background-color: black;
+        color: white;
+        font-size: 0.8rem;
+        padding:8px;
+        font-weight: 550;
+        border-radius: 5px;
+
+    }
+
+
+}

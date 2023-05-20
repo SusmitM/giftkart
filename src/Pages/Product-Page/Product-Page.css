@@ -5,24 +5,63 @@
     "filter filter"
     "filter filter";
   grid-template-rows: auto auto;
+  justify-content: center;
 }
-.product-section{
+.productDisplay-section{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:baseline ;
+    align-items:center;
+    font-family: -apple-system, BlinkMacSystemFont;
 }
 .filter-section{
     display: none;
     
 }
+.product-section{
+    margin-right: 24px;
+}
  .filterBtn{
-    padding: 5px;
-    height: fit-content;
     margin-left: 10px;
+    font-size: 0.80rem;
+    border-radius: 11px;
+    padding: 7px;
+    background-color: red;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.productDisplay-section-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productDisplay-section-title{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+.navigation-history{
+    all:unset;
+    padding-left: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    word-spacing: 20px;
+   
 }
 
 
 /* //Media Queries */
+
+@media (min-width:768px){
+    .product-list{
+        display: flex;
+    flex-wrap: wrap;
+    margin: 32px;
+    justify-content: space-between;
+
+    }
+}
 
 @media (min-width:1024px){
     .product-page-container{
@@ -36,16 +75,34 @@
         display: inline-block;
         grid-area: filter;
         width: 250px;
-        border-right: 1px solid grey;
     
         
     }
-    .product-section{
+    .productDisplay-section{
         grid-area: product;
     
     }
     .filterBtn{
         display: none;
+    }
+    .productDisplay-section-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .productDisplay-section-title{
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 700;
+        margin-top: 30px;
+    }
+    .navigation-history{
+        all:unset;
+        padding-left: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        word-spacing: 10px;
+       
     }
 
 }

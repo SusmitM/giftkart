@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "./Product-Page.css";
 import {Filters} from "../../Components"
 import { useDataContext } from '../../context/data/dataContext';
-
+import {FcFilledFilter} from 'react-icons/fc';
+import { ProductCard } from '../../Components/ProductCard/ProductCard';
 
 
 
@@ -11,7 +12,7 @@ export const ProductPage = () => {
   const [showFilters,setShowFilters]=useState(false);
 
   const {productsData}=useDataContext();
-   console.log(productsData);
+   
 
  const toggleFilterDisplay=()=>{
   setShowFilters(prev=>!prev)
@@ -26,9 +27,34 @@ export const ProductPage = () => {
       
       </div>
       
-      <div className="product-section">
-        <h1>Product</h1>
-        <button className="filterBtn" onClick={()=>toggleFilterDisplay()}>Filters</button>
+      <div className="productDisplay-section">
+
+        <div className="productDisplay-section-header">
+        <h1 className="productDisplay-section-title">Products</h1>
+        <button className="filterBtn" onClick={()=>toggleFilterDisplay()}>Filters <FcFilledFilter/></button>
+        </div>
+        <div className="navigation-history"><p>Home <span style={{color:"grey"}}>&gt;</span> Products</p></div>
+
+        <div className="product-section">
+          <ul className='product-list'>
+            {
+          productsData[0].map(product=>{
+            
+            return(
+              
+              <ProductCard productData={product} />
+              
+              
+            )
+          })
+          }
+          </ul>
+
+        </div>
+
+        
+
+
       </div>
     </div>
   )
