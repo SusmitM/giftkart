@@ -29,19 +29,10 @@
 
 }
 
-.out-of-stock-label {
-    font-weight: 600;
-    font-family: system-ui;
-    position: absolute;
-    background-color: rgb(113 60 223);
-    color: white;
-    padding: 7px;
-    border-radius: 10px;
-    margin: 6px;
-}
+
 
 .product-name {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 700;
 }
 
@@ -52,7 +43,7 @@
 }
 
 .add-toCart-btn {
-    font-size: 1.4rem;
+    font-size: 1rem;
     padding: 5px;
     border-radius: 20px;
     background-color: white;
@@ -74,65 +65,52 @@
     color: grey;
 
 }
+.out-of-stock-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-family: system-ui;
+    position: absolute;
+    background-color: rgb(113 60 223);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 6px;
+}
 
 .fast-delivery-label {
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 500;
     font-family: system-ui;
     position: absolute;
     background-color: green;
     color: white;
-    padding: 7px;
+    padding: 5px;
     border-radius: 10px;
     margin: 6px;
 }
 
 .product-rating {
+    font-size: 0.8rem;
     text-align: initial;
     background-color: green;
     width: fit-content;
-    padding: 6px 15px;
+    padding: 4px 8px;
     color: white;
-    font-weight: 600;
+    font-weight: 550;
     border-radius: 12px;
-}
-
-
-.overlay-singleProduct {
-    position: relative;
-    bottom: 50px;
-    height: 0;
-    width: 10%;
-    left: 19px;
-    overflow: hidden;
-    padding: 15px;
-    border-radius: 50%;
-    width: -moz-fit-content;
-    width: fit-content;
-    background-color: white;
-    transition: .5s ease;
-    display: none;
-    text-align: center;
-
-}
-
-.product-card:hover .overlay-singleProduct {
-    display: inline-table;
-
-}
-
-.overlay-singleProduct:hover {
-    background-color: black;
-    color: white;
 }
 
 .tooltip{
     background-color: black;
     color: white;
-    font-size: 0.8rem;
-    padding:8px;
-    font-weight: 550;
+    font-size: 0.5rem;
+    padding:5px;
+    font-weight: 500;
     border-radius: 5px;
 
+}
+.overlay-singleProduct{
+    display: none;
 }
 
 /* //Media Queries */
@@ -205,39 +183,11 @@
         font-weight: 500;
         border-radius: 11px
     }
-    
-    .overlay-singleProduct {
-        position: relative;
-        bottom: 50px;
-        height: 0;
-        width: 10%;
-        left: 19px;
-        overflow: hidden;
-        padding: 15px;
-        border-radius: 50%;
-        width: -moz-fit-content;
-        width: fit-content;
-        background-color: white;
-        transition: .5s ease;
-        display: none;
-        text-align: center;
-
-    }
-
-    .product-card:hover .overlay-singleProduct {
-        display: inline-table;
-
-    }
-
-    .overlay-singleProduct:hover {
-        background-color: black;
-        color: white;
-    }
-
+   
     .tooltip{
         background-color: black;
         color: white;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         padding:8px;
         font-weight: 550;
         border-radius: 5px;
@@ -256,8 +206,7 @@
         width: 270px;
         margin-bottom: 45px;
         text-align: center;
-        font-family: -apple-system,
-            BlinkMacSystemFont, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     .product-image-section img {
