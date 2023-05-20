@@ -199,6 +199,7 @@
 
 @media (min-width:1024px) {
     .product-card {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -297,25 +298,23 @@
     }
 
     .overlay-singleProduct {
-        position: relative;
-        bottom: 50px;
-        height: 0;
-        width: 10%;
-        left: 19px;
-        overflow: hidden;
-        padding: 15px;
+        position: absolute;
+        top: 158px;
+        right: 102px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0;
         border-radius: 50%;
-        width: -moz-fit-content;
-        width: fit-content;
-        background-color: white;
-        transition: .5s ease;
-        display: none;
-        text-align: center;
-
     }
 
     .product-card:hover .overlay-singleProduct {
-        display: inline-table;
+        opacity: 1;
 
     }
 

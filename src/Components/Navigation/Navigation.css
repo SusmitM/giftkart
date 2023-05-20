@@ -4,7 +4,6 @@
     align-items: center;
     height: 60px;
   
- 
 
 }
 
@@ -30,7 +29,6 @@
     cursor: pointer;
 
 
-
 }
 
 .nav-link {
@@ -41,6 +39,17 @@
     display: none;
     cursor: pointer;
 }
+.dropbtn{
+    display: flex;
+}
+.dropdown-content{
+    display: flex;
+}
+
+
+
+
+
 
 /* Media-Queries */
 @media (min-width:768px) {
