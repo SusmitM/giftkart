@@ -4,11 +4,12 @@ import {IoIosArrowDown} from 'react-icons/io';
 import { FiSearch,FiShoppingBag} from 'react-icons/fi';
 import { BsHeart,BsPerson,BsGift} from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/auth/authContext";
 
 
 export const Navigation = () => {
   const navigate=useNavigate();
- 
+ const {setLoginToken}=useAuthContext();
   return (
     <div className="navigation">
       <div className="nav-logo-container" onClick={()=>navigate("/")} ><p  className="nav-logo"><BsGift/>GiftKart</p></div>
@@ -39,6 +40,11 @@ export const Navigation = () => {
         <li className="nav-link" onClick={()=>navigate("/wishlist")}><BsHeart/></li>
         <li className="nav-link" onClick={()=>navigate("/userProfile")}><BsPerson/></li>
       </ul>
+      <button className="logOut-Btn" onClick={()=>{localStorage.removeItem("token");
+      setLoginToken(false);
+      navigate("/")
+      }
+}>Log-Out</button>
     </div>
   )
 }

@@ -16,14 +16,13 @@ function App() {
   return (
     <div className="App">
 
-      {loading ?
-       (<Loader/>) :
-      (
+      {loading && <Loader/> }
+      {!loading && 
          <>
          <Navigation/>
          <AppRoutes/>
          </>
-      )}
+      }
      
 
 

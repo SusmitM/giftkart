@@ -5,6 +5,6 @@ export {SingleProduct} from "./SingleProduct/SingleProduct";
 export {ProductPage} from "./Product-Page/Product-Page";
 export {Search} from "./Search/Search";
 export {SignIn} from "./SignIn/SignIn";
-export {SignOut} from "./SignOut/SignOut";
+export {SignUp} from "./SignUp/SignUp";
 export {UserProfile} from "./UserProfile/UserProfile";
 export {Wishlist} from "./Wishlist/Wishlist";
