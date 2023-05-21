@@ -12,7 +12,8 @@ export const ProductPage = () => {
   const [showFilters,setShowFilters]=useState(false);
 
   const {productsData}=useDataContext();
-   
+
+  
 
  const toggleFilterDisplay=()=>{
   setShowFilters(prev=>!prev)
@@ -38,7 +39,7 @@ export const ProductPage = () => {
         <div className="product-section">
           <ul className='product-list'>
             {
-          productsData[0].map(product=>{
+          productsData.map(product=>{
             
             return(
               

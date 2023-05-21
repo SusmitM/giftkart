@@ -1,0 +1,34 @@
+body{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+.page-heading{
+
+font-size: 2rem;
+color: #564848db;
+
+}
+/* Media-Queries */
+
+
+
+@media (min-width:768px) {
+    .page-heading{
+
+        font-size: 2.25rem;
+        
+        }
+
+
+
+}
+@media (min-width:1024px) {
+    .page-heading{
+
+        font-size: 2.3rem;
+        
+        }
+
+
+
+}

@@ -51,7 +51,7 @@ export const DataContextProvider=( {children})=>{
 
 
     return(
-        <DataContext.Provider value={{productsData:productState.productData}}>
+        <DataContext.Provider value={{productsData:productState.productData[0]}}>
             {children}
         </DataContext.Provider>
     )
