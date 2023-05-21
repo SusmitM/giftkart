@@ -2,7 +2,7 @@ import React from 'react'
 import"./SingleProduct.css"
 import { useParams } from 'react-router-dom'
 import { useDataContext } from '../../context/data/dataContext';
-import { SingleProductCard } from '../../Components/Single-ProductCard/Single-ProductCard';
+import { SingleProductCard } from '../../Components/SingleProductCard/SingleProductCard';
 
 
 export const SingleProduct = () => {
