@@ -1,0 +1,363 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 35px;
+
+
+}
+
+.image-section img {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+
+}
+
+.details-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px;
+    text-align: left;
+    font-size: 0.99rem;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 550;
+}
+
+.SingleProduct-rating {
+    color: green;
+    font-size: 1.2rem;
+    font-weight: 550;
+    margin-bottom: 5px;
+}
+
+.SingleProduct-price {
+    font-family: system-ui;
+    font-size: 1.6rem;
+    font-weight: 600;
+    word-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.categoryLabel {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: system-ui;
+    margin-bottom: 5px;
+}
+
+.outOfStockLabel {
+    text-align: left;
+    font-weight: 600;
+
+
+}
+
+.line {
+    width: 340px;
+    height: 10px;
+    border-bottom: 1px solid black;
+    margin:10px auto;
+}
+.descriptionLabel{
+    font-size: 1.3rem;
+    font-weight: 550;
+    margin-top: 10px;
+}
+.productDescription{
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.addToCart{
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToCart:hover{
+    background-color: white;
+    color: black;
+
+}
+
+.addToWishlist{
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToWishlist:hover{
+    background-color: white;
+    color: black;
+
+}
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+  button[disabled]:hover{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+
+
+
+/* Media-Queries */
+@media (min-width:768px) {
+    
+    .image-section img {
+        height: 350px;
+        width: 350px;
+        margin: auto;
+    
+    }
+    
+.details-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.SingleProduct-rating {
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+.SingleProduct-price {
+    font-family: system-ui;
+    font-size: 1.8rem;
+    font-weight: 650;
+    word-spacing: 15px;
+    margin-bottom: 15px;
+}
+
+.categoryLabel {
+    font-size: 1.4rem;
+    font-weight: 550;
+    font-family: system-ui;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 500px;
+    height: 10px;
+    border-bottom: 1.5px solid black;
+    margin:15px auto;
+}
+.descriptionLabel{
+    font-size: 1.75rem;
+    font-weight: 550;
+    margin-top: 10px;
+}
+.productDescription{
+    text-align: justify;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #4c3a3a;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.addToCart{
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToCart:hover{
+    background-color: white;
+    color: black;
+
+}
+
+.addToWishlist{
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToWishlist:hover{
+    background-color: white;
+    color: black;
+
+}
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+  button[disabled]:hover{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+ 
+}
+@media (min-width:1024px) {
+    .card-container {
+    display: flex;
+    flex-direction: row;
+    border:1px solid grey;
+    border-radius: 10px;
+    width: 800px;
+    margin: auto;
+    height: 400px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+
+}
+
+.image-section img {
+    height: 400px;
+    width: 300px;
+    margin: auto 21px auto 0px;
+    border-radius: 10px;
+
+}
+
+.details-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: left;
+    font-size: 0.8rem;
+    padding: 12px;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+.SingleProduct-rating {
+    color: green;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.SingleProduct-price {
+    font-family: system-ui;
+    font-size: 1.5rem;
+    font-weight: 600;
+    word-spacing: 10px;
+    margin-bottom: 5px;
+}
+
+.categoryLabel {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: system-ui;
+    margin-bottom: 2px;
+}
+
+.outOfStockLabel {
+    font-size: 0.8rem;
+    text-align: left;
+    font-weight: 600;
+
+
+}
+
+.line {
+    width: 400px;
+    height: 5px;
+    border-bottom: 1.5px solid grey;
+    margin:5px auto;
+    
+}
+.descriptionLabel{
+    font-size: 1.25srem;
+    font-weight: 550;
+    margin-top: 10px;
+}
+.productDescription{
+    text-align: justify;
+    font-size: 0.9rem;
+    font-weight: 550;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.addToCart{
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToCart:hover{
+    background-color: white;
+    color: black;
+
+}
+
+.addToWishlist{
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+.addToWishlist:hover{
+    background-color: white;
+    color: black;
+
+}
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+  button[disabled]:hover{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop
+  }
+
+
+
+}
