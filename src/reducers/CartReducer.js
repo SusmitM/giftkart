@@ -11,7 +11,7 @@ export const CartReducer=(cartState,action)=>{
        
 
     default:
-        break;
+       return cartState;
 }
 
 }

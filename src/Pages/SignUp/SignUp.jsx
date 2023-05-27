@@ -19,7 +19,7 @@ const {signupHandler}=useAuthContext();
   const clickHandeler=()=>{
     if(formData.firstName !== "" && formData.lastName !== "" && formData.email !== "" && formData.password !== "" && formData.email.includes('@') ){
       signupHandler(formData);
-      navigate("/signin");
+      navigate("/products");
     }
     else{
       alert("Ïnvalid Credintials")

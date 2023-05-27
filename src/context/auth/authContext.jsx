@@ -26,6 +26,9 @@ const signupHandler = async (formData) => {
         password: formData.password,
       });
       console.log(response)
+      // saving the encodedToken in the localStorage
+      localStorage.setItem("token", response.data.encodedToken);
+      setLoginToken(response.data.encodedToken)
 
     } catch (error) {
       console.log(error);
@@ -40,10 +43,10 @@ const signinHandler = async (loginData) => {
       email: loginData.email,
       password: loginData.password,
     });
-    console.log(response.data.encodedToken)
+   
        // saving the encodedToken in the localStorage
        localStorage.setItem("token", response.data.encodedToken);
-       setLoginToken(response.data.encodedToken ? true: false)
+       setLoginToken(response.data.encodedToken)
 
   } catch (error) {
     console.log(error);

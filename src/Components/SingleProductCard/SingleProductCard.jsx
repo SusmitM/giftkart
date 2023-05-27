@@ -2,7 +2,7 @@ import React from 'react'
 import "./SingleProductCard.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faStar,faTriangleExclamation,faTag,faAnchor,faCartShopping,faHeart} from "@fortawesome/free-solid-svg-icons";
-import { useCartContext } from '../../context/auth/cartContext';
+import { useCartContext } from '../../context/cart/cartContext';
 
 
 export const SingleProductCard = ({selectedProduct}) => {

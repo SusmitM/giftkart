@@ -1,7 +1,7 @@
-import { useContext, createContext, useReducer } from "react";
+import { useEffect, useContext, createContext, useReducer } from "react";
 import { CartReducer, initialCartState } from "../../reducers/CartReducer";
 import axios from "axios";
-import { useAuthContext } from "./authContext";
+import { useAuthContext } from "../auth/authContext";
 import { AddToCart } from "../../services/cartService/AddToCart";
 import { DeleteFromCart } from "../../services/cartService/DeleteFromCart";
 import { GetCartData } from "../../services/cartService/GetCartData";
@@ -31,10 +31,12 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
+ 
+  
   // add To Cart feature
 
   const addToCart = async (productData) => {
-    console.log(productData);
+  
 
     try {
       const response = await AddToCart(productData,loginToken);
@@ -67,9 +69,17 @@ export const CartContextProvider = ({ children }) => {
     }
   }
 
+  //load the existing cart data on first render
+   useEffect(()=>{
+    loginToken && getCartData()
+  },[])
+
+
+
+  
   return (
     <cartContext.Provider
-      value={{ cartState, addToCart, cartDispatch, getCartData,deleteFromCart }}
+      value={{ cartState, addToCart,getCartData, cartDispatch,deleteFromCart }}
     >
       {children}
     </cartContext.Provider>

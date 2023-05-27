@@ -1,11 +1,12 @@
 import React from 'react'
-import { useCartContext } from '../../context/auth/cartContext'
+import { useCartContext } from '../../context/cart/cartContext'
 import { useAuthContext } from '../../context/auth/authContext'
 import { useEffect } from 'react';
 import { initialCartState } from '../../reducers/CartReducer';
 
 export const Cart = () => {
 const {cartState,deleteFromCart}=useCartContext();
+
 
   return (
   <>
