@@ -10,15 +10,9 @@ const authContext=createContext();
 export const AuthContextProvider=({children})=>{
     const navigate= useNavigate();
 
-   
+     const encodedToken = localStorage.getItem("token");
 
-    useEffect(()=>{
-      const encodedToken = localStorage.getItem("token");
-      setLoginToken(encodedToken?true:false)
-
-    },[])
-
-   const [loginToken,setLoginToken]=useState();
+   const [loginToken,setLoginToken]=useState(encodedToken);
 
 //Sign-Up functionality
 

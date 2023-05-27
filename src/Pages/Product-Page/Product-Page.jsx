@@ -43,7 +43,7 @@ export const ProductPage = () => {
             
             return(
               
-              <ProductCard productData={product} />
+              <ProductCard key={product._id} productData={product} />
               
               
             )

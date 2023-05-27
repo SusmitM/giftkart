@@ -2,9 +2,12 @@ import React from 'react'
 import "./SingleProductCard.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faStar,faTriangleExclamation,faTag,faAnchor,faCartShopping,faHeart} from "@fortawesome/free-solid-svg-icons";
+import { useCartContext } from '../../context/auth/cartContext';
 
 
 export const SingleProductCard = ({selectedProduct}) => {
+ const {addToCart}=useCartContext();
+
   const {
     _id,
     img1,
@@ -18,10 +21,6 @@ export const SingleProductCard = ({selectedProduct}) => {
     category,
     fastDelivery,
   } = selectedProduct;
-
-  const print=()=>{
-    console.log("sfsa")
-  }
   return (
    <>
    <div className="card-container">
@@ -44,7 +43,8 @@ export const SingleProductCard = ({selectedProduct}) => {
       <div className="descriptionLabel">Description</div>
       <p className="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div className="buttonContainer">
-        <button className="addToCart"  disabled={outOfStock ? true: false} onClick={()=> print()}><FontAwesomeIcon icon={faCartShopping} /> Add to Cart</button>
+
+        <button className="addToCart"  disabled={outOfStock ? true: false} onClick={()=>addToCart()}><FontAwesomeIcon icon={faCartShopping} /> Add to Cart</button>
         <button className="addToWishlist"> <FontAwesomeIcon icon={faHeart} /> Add to Wishlist</button>
       </div>
 

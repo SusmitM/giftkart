@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom"
 import "./ProductCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar, faEye } from "@fortawesome/free-solid-svg-icons";
+import { useCartContext } from "../../context/auth/cartContext";
 
 export const ProductCard = ({ productData }) => {
   const navigate = useNavigate();
@@ -21,8 +22,10 @@ export const ProductCard = ({ productData }) => {
     fastDelivery,
   } = productData;
 
+  const {addToCart}=useCartContext();
+
   return (
-    <div className="product-card">
+    <div className="product-card" key={_id}>
       <span className="cardHeader" onClick={()=>navigate(`/products/${_id}`)}>
       <div className="product-image-section" >
         <span className="img1-container">
@@ -62,7 +65,7 @@ export const ProductCard = ({ productData }) => {
           <span className="originalPrice">{originalPrice}</span>
         </div>
 
-        <button className="add-toCart-btn">ADD to CART</button>
+        <button className="add-toCart-btn" onClick={()=>addToCart(productData)}>ADD to CART</button>
       </div>
       <Tippy content={<span className="tooltip">Move to Wishlist</span>}>
       <span  className="wishlist-btn" role="button">
