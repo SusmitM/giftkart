@@ -1,0 +1,277 @@
+.signIn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui;
+    margin: auto;
+    height: 500px;
+}
+
+.signIn-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.signIn-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.signIn-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 250px;
+    border: 1.5px solid hsl(199, 16%, 81%);
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+.email-label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px auto;
+}
+
+.password-label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px auto;
+}
+
+.password-input {
+    background-color: hsl(200deg 12% 95.1%);
+    border: 1px transparent;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 120px;
+    font-size: 0.9rem;
+
+}
+
+.email-input {
+    background-color: hsl(200deg 12% 95.1%);
+    border: 1px transparent;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 120px;
+    font-size: 0.9rem;
+
+}
+
+.signIn-btn {
+    padding: 5px 30px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.signUp-label {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.signUp-link {
+    color: rgb(1, 119, 253);
+    cursor: pointer;
+}
+
+/* //Media Queries */
+
+@media (min-width:768px) {
+
+    .signIn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui;
+        margin: auto;
+        height: 500px;
+    }
+
+    .signIn-header {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .signIn-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 18px;
+    }
+
+    .signIn-form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: 350px;
+        border: 1.5px solid hsl(199, 16%, 81%);
+        width: 200px;
+        padding: 10px;
+        border-radius: 15px;
+
+    }
+
+    .email-label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin: 13px auto;
+    }
+
+    .password-label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin: 13px auto;
+    }
+
+    .password-input {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 180px;
+        font-size: 0.95rem;
+
+    }
+
+    .email-input {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 180px;
+        font-size: 0.95rem;
+
+    }
+
+    .signIn-btn {
+        padding: 8px 40px;
+        margin: auto;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+
+    }
+
+    .signUp-label {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+
+    .signUp-link {
+        color: rgb(1, 119, 253);
+        cursor: pointer;
+    }
+
+}
+
+
+@media (min-width:1024px) {
+    .signIn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: system-ui;
+        height: 500px;
+    }
+
+    .signIn-header {
+        font-size: 2.1rem;
+        font-weight: 700;
+    }
+
+    .signIn-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .signIn-form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: 350px;
+        border: 1.5px solid hsl(199, 16%, 81%);
+        width: 250px;
+        padding: 20px;
+        border-radius: 15px;
+
+    }
+
+    .email-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 20px auto;
+    }
+
+    .password-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 20px auto;
+    }
+
+    .password-input {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 12px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 230px;
+        font-size: 0.9rem;
+
+    }
+
+    .email-input {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 12px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 230px;
+        font-size: 0.9rem;
+
+    }
+
+    .signIn-btn {
+        padding: 12px 50px;
+        margin: auto;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+
+    }
+
+    .signUp-label {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .signUp-link {
+        color: rgb(1, 119, 253);
+        cursor: pointer;
+    }
+
+}
