@@ -26,12 +26,17 @@ const signupHandler = async (formData) => {
         password: formData.password,
       });
       console.log(response)
-      // saving the encodedToken in the localStorage
-      localStorage.setItem("token", response.data.encodedToken);
-      setLoginToken(response.data.encodedToken)
+      if(response.status===201){
+        // saving the encodedToken in the localStorage
+        localStorage.setItem("token", response.data.encodedToken);
+        setLoginToken(response.data.encodedToken)
+        navigate("/products");
+     }
+    
 
     } catch (error) {
       console.log(error);
+      alert("Invalid Credentials")
     }
   };
 
@@ -43,13 +48,18 @@ const signinHandler = async (loginData) => {
       email: loginData.email,
       password: loginData.password,
     });
-   
+    if(response.status===200){
        // saving the encodedToken in the localStorage
        localStorage.setItem("token", response.data.encodedToken);
        setLoginToken(response.data.encodedToken)
+       navigate("/products");
+    }
+   
+      
 
   } catch (error) {
     console.log(error);
+    alert("Invalid Credentials")
   }
 };
 

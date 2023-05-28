@@ -21,9 +21,8 @@ export const SignIn = () => {
       loginData.email.includes("@")
     ) {
       signinHandler(loginData);
-      navigate("/products");
     } else {
-      alert("Invalid Credintials");
+      alert("Invalid Credentials");
     }
   };
 
@@ -33,17 +32,17 @@ export const SignIn = () => {
       <div className="signIn-label">Sign in to your account</div>
 
       <div className="signIn-form">
-        <label className="email-label">Email address</label>
+        <label className="input-label">Email address</label>
         <input
-          className="email-input"
+          className="input-box"
           type="email"
           value={loginData.email}
           onChange={(e) => updateData(e, "email")}
         />
 
-        <label className="password-label"> Password</label>
+        <label className="input-label"> Password</label>
         <input
-          className="password-input"
+          className="input-box"
           type="password"
           value={loginData.password}
           onChange={(e) => updateData(e, "password")}

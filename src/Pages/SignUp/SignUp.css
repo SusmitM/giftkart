@@ -1,4 +1,224 @@
-.signup-form{
+.signUp-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui;
+    margin: auto;
+    height: 600px;
+}
+
+.signUp-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.signUpLabel {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.signUp-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 400px;
+    width: 300px;
+    border: 1.5px solid hsl(199, 16%, 81%);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.inputLabel {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px auto;
+
+}
+
+.input-container {
+    background-color: hsl(200deg 12% 95.1%);
+    border: 1px transparent;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 250px;
+    font-size: 0.9rem;
+}
+
+.signUp-btn {
+    padding: 8px 30px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.signInLabel {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.signIn-link {
+    color: rgb(1, 119, 253);
+    cursor: pointer;
+}
+
+/* //Media Queries */
+
+@media (min-width:768px) {
+    .signUp-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui;
+        margin: auto;
+        height: 600px;
+    }
+
+    .signUp-header {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .signUpLabel {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 18px;
+    }
+
+    .signUp-form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: 500px;
+        width: 350px;
+        border: 1.5px solid hsl(199, 16%, 81%);
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .inputLabel {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin: 13px auto;
+
+    }
+
+    .input-container {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 320px;
+        font-size: 0.95rem;
+    }
+
+    .signUp-btn {
+        padding: 8px 40px;
+        margin: auto;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+    }
+
+    .signInLabel {
+        font-size: 1rem;
+        margin-top: 8px;
+
+    }
+
+    .signIn-link {
+        color: rgb(1, 119, 253);
+        cursor: pointer;
+    }
+
+
+}
+
+@media (min-width:1024px) {
+    .signUp-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: system-ui;
+        height: 750px;
+    }
+
+    .signUp-header {
+        font-size: 2.1rem;
+        font-weight: 700;
+    }
+
+    .signUpLabel {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .signUp-form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: 500px;
+        border: 1.5px solid hsl(199, 16%, 81%);
+        width: 350px;
+        padding: 30px;
+        border-radius: 15px;
+
+    }
+
+    .inputLabel {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 20px auto;
+    }
+
+    .input-container {
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 12px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 330px;
+        font-size: 0.9rem;
+
+    }
+
+    .signUp-btn {
+        padding: 12px 50px;
+        margin: 35px auto;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+    }
+
+    .signInLabel {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .signUp-link {
+        color: rgb(1, 119, 253);
+        cursor: pointer;
+    }
+
 }

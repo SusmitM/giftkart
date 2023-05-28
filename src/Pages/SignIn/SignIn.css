@@ -5,7 +5,7 @@
     justify-content: center;
     font-family: system-ui;
     margin: auto;
-    height: 500px;
+    height: 600px;
 }
 
 .signIn-header {
@@ -32,30 +32,14 @@
 
 }
 
-.email-label {
+.input-label {
     font-size: 1rem;
     font-weight: 500;
     margin: 10px auto;
 }
 
-.password-label {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 10px auto;
-}
 
-.password-input {
-    background-color: hsl(200deg 12% 95.1%);
-    border: 1px transparent;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0px auto;
-    width: 120px;
-    font-size: 0.9rem;
-
-}
-
-.email-input {
+.input-box{
     background-color: hsl(200deg 12% 95.1%);
     border: 1px transparent;
     padding: 8px;
@@ -73,7 +57,7 @@
     color: white;
     border-radius: 15px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
 
 }
@@ -126,30 +110,13 @@
 
     }
 
-    .email-label {
+    .input-label {
         font-size: 1.1rem;
         font-weight: 500;
         margin: 13px auto;
     }
 
-    .password-label {
-        font-size: 1.1rem;
-        font-weight: 500;
-        margin: 13px auto;
-    }
-
-    .password-input {
-        background-color: hsl(200deg 12% 95.1%);
-        border: 1px transparent;
-        padding: 10px;
-        border-radius: 5px;
-        margin: 0px auto;
-        width: 180px;
-        font-size: 0.95rem;
-
-    }
-
-    .email-input {
+    .input-box {
         background-color: hsl(200deg 12% 95.1%);
         border: 1px transparent;
         padding: 10px;
@@ -167,7 +134,7 @@
         color: white;
         border-radius: 15px;
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
         cursor: pointer;
 
     }
@@ -218,30 +185,13 @@
 
     }
 
-    .email-label {
+    .input-label {
         font-size: 1.2rem;
         font-weight: 500;
         margin: 20px auto;
     }
 
-    .password-label {
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin: 20px auto;
-    }
-
-    .password-input {
-        background-color: hsl(200deg 12% 95.1%);
-        border: 1px transparent;
-        padding: 12px;
-        border-radius: 5px;
-        margin: 0px auto;
-        width: 230px;
-        font-size: 0.9rem;
-
-    }
-
-    .email-input {
+    .input-box{
         background-color: hsl(200deg 12% 95.1%);
         border: 1px transparent;
         padding: 12px;
@@ -254,12 +204,12 @@
 
     .signIn-btn {
         padding: 12px 50px;
-        margin: auto;
+        margin: 25px auto;
         background-color: black;
         color: white;
         border-radius: 20px;
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
         cursor: pointer;
 
     }
