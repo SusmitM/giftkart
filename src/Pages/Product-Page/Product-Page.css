@@ -1,14 +1,11 @@
 .product-page-container{
-    display: grid;
-    grid-template-areas: 
-    "product product"
-    "filter filter"
-    "filter filter";
-  grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
   justify-content: center;
 }
 .productDisplay-section{
     display: flex;
+   
     flex-direction: column;
     justify-content: center;
     align-items:center;
@@ -16,6 +13,7 @@
 }
 .filter-section{
     display: none;
+   
     
 }
 .product-section{

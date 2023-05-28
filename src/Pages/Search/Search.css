@@ -1,0 +1,124 @@
+.search-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+  
+}
+.searchBar{
+    display: flex;
+    width: 40vh;
+    height: 3vh;
+    border:2px solid grey;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px;
+
+}
+.searchBar input{
+    all:unset;
+    width: 35vh;
+    height: 3vh;
+   
+}
+
+.product-display-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top: 25px;
+    width: 100%;
+
+
+}
+/* //Media Queries */
+
+@media (min-width:768px){
+    .search-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+      
+    }
+    .searchBar{
+        display: flex;
+        width: 50vh;
+        height: 3.5vh;
+        border:2px solid grey;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 8px;
+    
+    }
+    .searchBar input{
+        all:unset;
+        width: 45vh;
+        height: 3.5vh;
+       
+    
+    }
+    
+    .product-display-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        margin-top: 40px;;
+        width: 100%;
+    
+    
+    }
+
+}
+
+@media (min-width:1024px){
+    .search-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 30px;
+      
+    }
+    .searchBar{
+        display: flex;
+        width: 100vh;
+        height: 4vh;
+        border:2px solid grey;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+    
+    }
+    .searchBar input{
+        all:unset;
+        width: 95vh;
+        height: 4vh;
+       
+    }
+    
+    .product-display-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        margin-top: 50px;;
+        width: 100%;
+    
+
+    }
+
+}
