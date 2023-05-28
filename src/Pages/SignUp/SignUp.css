@@ -48,6 +48,26 @@
     font-size: 0.9rem;
 }
 
+.passwordContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: hsl(200deg 12% 95.1%);
+    border: 1px transparent;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 180px;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.passwordInput {
+    all: unset;
+    width: 90%;
+}
+
 .signUp-btn {
     padding: 8px 30px;
     margin: auto;
@@ -122,6 +142,25 @@
         width: 320px;
         font-size: 0.95rem;
     }
+    .passwordContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 180px;
+        font-size: 1.2rem;
+        text-align: left;
+        font-weight: 500;
+    }
+    
+    .passwordInput {
+        all: unset;
+        width: 85%;
+    }
 
     .signUp-btn {
         padding: 8px 40px;
@@ -145,7 +184,6 @@
         color: rgb(1, 119, 253);
         cursor: pointer;
     }
-
 
 }
 
@@ -197,6 +235,25 @@
         width: 330px;
         font-size: 0.9rem;
 
+    }
+    .passwordContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: hsl(200deg 12% 95.1%);
+        border: 1px transparent;
+        padding: 12px;
+        border-radius: 5px;
+        margin: 0px auto;
+        width: 330px;
+        font-size: 1.1rem;
+        text-align: left;
+        font-weight: 500;
+    }
+    
+    .passwordInput {
+        all: unset;
+        width: 90%;
     }
 
     .signUp-btn {
