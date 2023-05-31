@@ -24,7 +24,9 @@ export const ProductCard = ({ productData }) => {
   } = productData;
 
   const {addToCart}=useCartContext();
-  const {addToWishlist}=useWishlistContext();
+  const {addToWishlist,itemInWishlist, deleteFromWishlist}=useWishlistContext();
+  const itemPresentInWishlist =itemInWishlist(_id)
+ 
 
   return (
     <div className="product-card" key={_id}>
@@ -69,9 +71,9 @@ export const ProductCard = ({ productData }) => {
 
         <button className="add-toCart-btn" onClick={()=>addToCart(productData)}>ADD to CART</button>
       </div>
-      <Tippy content={<span className="tooltip"  >Move to Wishlist</span>}>
-      <span  className="wishlist-btn" role="button" onClick={()=>addToWishlist(productData)}>
-        <FontAwesomeIcon icon={faHeart} size="2x" />
+      <Tippy content={<span className="tooltip"  >{itemPresentInWishlist ? "Remove From Wishlist":"Move to Wishlist"}</span>}>
+      <span  className="wishlist-btn" role="button" onClick={()=>itemPresentInWishlist ? deleteFromWishlist(_id) :addToWishlist(productData)}>
+      { itemPresentInWishlist ?  <FontAwesomeIcon icon={faHeart}  style={{ color: "red" }} size="2x" /> :  <FontAwesomeIcon icon={faHeart} style={{ color: "#c2c2c2" }} size="2x"  />}
       </span>
       </Tippy>
       

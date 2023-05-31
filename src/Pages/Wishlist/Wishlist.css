@@ -1,0 +1,33 @@
+.wishlist-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wishlist-section-header {}
+
+.wishlist-section-title {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.wishlist-empty-title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+@media (min-width:768px) {
+
+    .wishlist-items {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 32px;
+        justify-content: space-evenly;
+    }
+
+
+}
