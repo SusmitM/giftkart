@@ -5,10 +5,12 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 import { BsHeart, BsPerson, BsGift } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/auth/authContext";
+import { useFilterContext } from "../../context/filters/filterContext";
 
 export const Navigation = () => {
   const navigate = useNavigate();
   const { setLoginToken } = useAuthContext();
+  const {filterDispatch}=useFilterContext();
   return (
     <div className="navigation">
       <ToastContainer
@@ -31,24 +33,24 @@ export const Navigation = () => {
       </div>
 
       <ul className="nav-category-links" style={{ listStyle: "none" }}>
-        <li className="nav-category-link">Cartoon</li>
-        <li className="nav-category-link">Sports</li>
-        <li className="nav-category-link">
+        <li className="nav-category-link"  onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Cartoon" })}}>Cartoon</li>
+        <li className="nav-category-link" onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Sport" })}}>Sports</li>
+        <li className="nav-category-link"  onClick={() => navigate("/products")}>
           <div className="dropdown">
             <button className="dropbtn" onClick={() => navigate("/products")}>
               All Products
               <IoIosArrowDown />
             </button>
             <div className="dropdown-content">
-              <a href="#">Mugs</a>
-              <a href="#">Frames</a>
-              <a href="#">Magnets</a>
-              <a href="#">Lamps</a>
+              <div onClick={() => {navigate("/products"); filterDispatch({ type: "ProductType-Filter", payload: "Mugs" })}} >Mugs</div>
+              <div  onClick={() => {navigate("/products"); filterDispatch({ type: "ProductType-Filter", payload: "Frames" })}}>Frames</div>
+              <div  onClick={() => {navigate("/products"); filterDispatch({ type: "ProductType-Filter", payload: "Magnets" })}}>Magnets</div>
+              <div  onClick={() => {navigate("/products"); filterDispatch({ type: "ProductType-Filter", payload: "Lamps" })}}>Lamps</div>
             </div>
           </div>
         </li>
-        <li className="nav-category-link">Modern</li>
-        <li className="nav-category-link">Classic</li>
+        <li className="nav-category-link"  onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Modern" })}}>Modern</li>
+        <li className="nav-category-link"  onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Classic" })}}>Classic</li>
       </ul>
 
       <ul className="nav-link-Container" style={{ listStyle: "none" }}>

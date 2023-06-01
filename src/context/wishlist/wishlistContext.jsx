@@ -1,7 +1,7 @@
 import { useContext, useReducer, useEffect } from "react";
 import { createContext } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import {toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
@@ -47,9 +47,9 @@ export const WishlistContextProvider = ({ children }) => {
           type: "addToWishlist",
           payload: response?.data?.wishlist,
         });
-        // Toast for adding item from wishlist
+        // Toast for adding item to wishlist
         toast.success("Item Added to Wishlist", {
-          position: "top-right",
+          position: "top-left",
           autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -63,7 +63,7 @@ export const WishlistContextProvider = ({ children }) => {
       console.error(error);
       // Toast for failing to remove item from wishlist
       toast.error("Unable to add item", {
-        position: "top-right",
+        position: "top-left",
         autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -86,8 +86,8 @@ export const WishlistContextProvider = ({ children }) => {
           payload: response?.data?.wishlist,
         });
         // Toast for removing item from wishlist
-        toast.success("Item Removed From Wishlist", {
-          position: "top-right",
+        toast.warn("Item Removed From Wishlist", {
+          position: "top-left",
           autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -101,7 +101,7 @@ export const WishlistContextProvider = ({ children }) => {
       console.error(error);
       // Toast for failing to remove item from wishlist
       toast.error("Unable to remove item", {
-        position: "top-right",
+        position: "top-left",
         autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -126,18 +126,6 @@ export const WishlistContextProvider = ({ children }) => {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <wishlistContext.Provider
         value={{
           wishlistState,

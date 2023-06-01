@@ -16,7 +16,7 @@ export const Wishlist = () => {
       <div className="wishlistDisplay-section">
       <ul className="wishlist-items">
         {wishlistState.wishlist.map((product) => {
-          return <ProductCard key={product._id} productData={product} />;
+          return <ProductCard key={product._id} productData={product} page="wishlistPage"/>;
         })}
       </ul>
       </div>

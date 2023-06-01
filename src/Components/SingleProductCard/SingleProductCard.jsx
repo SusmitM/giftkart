@@ -14,8 +14,6 @@ import { useWishlistContext } from "../../context/wishlist/wishlistContext";
 
 export const SingleProductCard = ({ selectedProduct }) => {
   const navigate=useNavigate();
-  const { addToCart } = useCartContext();
-
   const {
     _id,
     img1,
@@ -30,8 +28,11 @@ export const SingleProductCard = ({ selectedProduct }) => {
     fastDelivery,
   } = selectedProduct;
 
+  const { addToCart,itemInCart } = useCartContext();
   const { addToWishlist, itemInWishlist, deleteFromWishlist } =
     useWishlistContext();
+
+    const itemPresentInCart = itemInCart(_id); 
   const itemPresentInWishlist = itemInWishlist(_id);
 
   return (
@@ -89,9 +90,9 @@ export const SingleProductCard = ({ selectedProduct }) => {
             <button
               className="addToCart"
               disabled={outOfStock ? true : false}
-              onClick={() => addToCart()}
+              onClick={()=>itemPresentInCart ? navigate(`/cart`):addToCart(selectedProduct)}
             >
-              <FontAwesomeIcon icon={faCartShopping} /> Add to Cart
+              <FontAwesomeIcon icon={faCartShopping} />{itemPresentInCart ? "Go to Cart" : "Add to Cart"}
             </button>
             <button className="addToWishlist" onClick={()=>itemPresentInWishlist ? navigate(`/wishlist`):addToWishlist(selectedProduct)}>
               {" "}

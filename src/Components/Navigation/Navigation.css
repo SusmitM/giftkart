@@ -152,7 +152,7 @@
     z-index: 1;
   }
   
-  .dropdown-content a {
+  .dropdown-content div {
     float: none;
     color: grey;
     font-family:'Times New Roman', Times, serif;
@@ -163,7 +163,7 @@
     font-size: 15px;
   }
   
-  .dropdown-content a:hover {
+  .dropdown-content div:hover {
     background-color: #d8d4d4;
     color: black;
   }

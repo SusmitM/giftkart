@@ -45,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
         // Toast for unsuccessful signUp
-      toast.error('Invalid Credentials!!!', {
+      toast.error(error.response.data.errors[0], {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -86,7 +86,7 @@ export const AuthContextProvider = ({ children }) => {
       console.error(error);
 
       // Toast for unsuccessful sign-In
-      toast.error('Invalid Credentials!!!', {
+      toast.error(error.response.data.errors[0], {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -101,18 +101,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <>
-      <ToastContainer
-        position="top-center"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+     
       <authContext.Provider
         value={{ loginToken, setLoginToken, signupHandler, signinHandler }}
       >
