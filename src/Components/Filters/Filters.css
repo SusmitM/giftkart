@@ -1,12 +1,13 @@
 .filter-box {
     position: fixed;
-  color: white;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin-top: 80px;
-  background-color: rgba(255, 255, 255, 0.9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 999;
 
 }
 
@@ -67,19 +68,7 @@
 
 
 @media (min-width:768px) {
-    .filter-box {
-        position: fixed;
-        color: white;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        margin-top: 80px;
-        transition: transform 0.3s ease-in-out;
-        background-color: white;
-
-
-    }
+    
 
     .filter-container {
         display: flex;
@@ -142,8 +131,12 @@
         margin-top: 50px;
         top: 0;
         left: 0;
+        padding: 0px;
         height: 100vh;
         width: 250px;
+        transform: translate(0%, 0%);
+        z-index: 0;
+        height: 100%;
 
     }
 
