@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 20px auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: 450px;
+    width:700px;
     border-radius: 10px;
 
 }
@@ -86,4 +86,34 @@
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
+  }
+  .addNewAddressBtn{
+    background-color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .editBtn{
+    background-color: black;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .paymentStatus{
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .orderData-heading{
+    font-size: 1.5rem;
+    font-family: monospace;
+    font-weight: 700;
+    color: green;
   }

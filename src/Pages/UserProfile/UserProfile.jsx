@@ -4,11 +4,11 @@ import { useAuthContext } from "../../context/auth/authContext";
 import { useAddressContext } from "../../context/address/addressContext";
 
 export const UserProfile = () => {
-  const{userData}=useAuthContext();
+  const{userData,selectedValue, setSelectedValue}=useAuthContext();
   const {addressState,addressDispatch}=useAddressContext();
   const headings = ["Profile", "Address", "Orders"];
-  const [selectedValue, setSelectedValue] = useState("Profile");
-
+  
+console.log(userData)
   const [showForm, setShowForm] = useState(false);
   const [editing,setEditing]=useState(false);
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ export const UserProfile = () => {
     Pincode: '',
     PhoneNo: '',
   });
-  console.log(addressState.address)
+  console.log(userData["order"][0])
   const handleFormSubmit = () => {
 
     if(editing){
@@ -68,7 +68,7 @@ export const UserProfile = () => {
               className="headingValue"
               key={index}
               onClick={()=>setSelectedValue(heading)}
-              style={{color:selectedValue===heading ? "rgb(1, 119, 253)":"black"}}
+              style={{color:selectedValue===heading ? "rgb(1, 119, 253)":"black",textDecoration:selectedValue===heading ? "underline":""}}
             >
               {heading}
             </li>
@@ -76,6 +76,9 @@ export const UserProfile = () => {
         </ul>
       </div>
       <div className="contentContainer">
+
+        {/* //Profile Section */}
+
         {selectedValue=== "Profile" && (
           <div className="userData">
             <p className="userName">Name:{userData.firstName}{userData.lastName} </p>
@@ -83,10 +86,11 @@ export const UserProfile = () => {
             
           </div>
         )}
+        {/* /* Address Section */ }
         {
           selectedValue=== "Address" &&(
             <div className="addressData">
-               <button onClick={() =>{ setShowForm(true);setEditing(false)}}>Add New Address</button>
+               <button className="addNewAddressBtn" onClick={() =>{ setShowForm(true);setEditing(false)}}>Add New Address</button>
               <ol className="addressList">
                 {
                   addressState.address.map(addressData=><li className="individualAddress">
@@ -95,7 +99,7 @@ export const UserProfile = () => {
                     <div>State: {addressData.State}</div>
                     <div>PinCode: {addressData.Pincode}</div>
                     <div>PhoneNo: {addressData.PhoneNo}</div>
-                    <button onClick={()=>editForm(addressData.id)}>Edit</button>
+                    <button  className="editBtn"  onClick={()=>editForm(addressData.id)}>Edit</button>
                     </li>)
                 }
               </ol>
@@ -160,6 +164,23 @@ export const UserProfile = () => {
              
             </div>
             )
+        }
+        {selectedValue==="Orders" && 
+         ( userData["order"][0] ? <div className="orderData">
+         <div className="orderData-heading">Total Price: ₹{userData.orderAmount}</div>
+         <div className="paymentStatus">Payment: Pending</div>
+         <hr/>
+         <ul>
+           {
+             userData["order"][0].map(item=><li>
+               <div><img style={{height:"130px",width:"110px"}} src={item.img1} alt={item.name}/></div>
+               <div>{item.name}</div>
+               <div>Quantity:{item.qty}</div>
+             </li>)
+           }
+         </ul>
+
+        </div>: <div>No orders placed</div>)
         }
       </div>
     </div>

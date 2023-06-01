@@ -14,8 +14,8 @@ export const AuthContextProvider = ({ children }) => {
 
   const [loginToken, setLoginToken] = useState(encodedToken);
   const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",order:[],orderAmount:"",address:[]})
-
-  console.log(userData);
+  const [selectedValue, setSelectedValue] = useState("Profile");
+  
   //Sign-Up functionality
 
   const signupHandler = async (formData) => {
@@ -112,7 +112,7 @@ export const AuthContextProvider = ({ children }) => {
     <>
      
       <authContext.Provider
-        value={{ loginToken, setLoginToken, signupHandler, signinHandler,userData,setUserData }}
+        value={{ loginToken, setLoginToken, signupHandler, signinHandler,userData,setUserData,selectedValue,setSelectedValue }}
       >
         {children}
       </authContext.Provider>
