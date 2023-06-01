@@ -1,0 +1,89 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 450px;
+    border-radius: 10px;
+
+}
+.headingContainer{
+    display: flex;
+    justify-content: center;
+   
+}
+
+.headingList{
+    display: flex;
+    flex-direction:row;
+    list-style: none;
+   
+}
+.headingValue{
+    margin: auto 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: system-ui;
+    cursor: pointer;
+}
+.contentContainer{
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: system-ui;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+.individualAddress{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    box-shadow: rgb(1, 119, 253) 0px 1px 6px 1px;
+    width: 340px;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+
+}
+.form-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    color:black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+ 
+  .form-wrapper label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .formBtnDiv{
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .form-wrapper  input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    color:black;
+    background-color: hsl(200deg 12% 95.1%)
+
+
+  }
+  
+  .form-wrapper  button {
+    padding: 8px 30px;
+    margin: auto 5px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+  }

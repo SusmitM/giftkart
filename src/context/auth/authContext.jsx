@@ -13,7 +13,9 @@ export const AuthContextProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("token");
 
   const [loginToken, setLoginToken] = useState(encodedToken);
+  const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",order:[],orderAmount:"",address:[]})
 
+  console.log(userData);
   //Sign-Up functionality
 
   const signupHandler = async (formData) => {
@@ -33,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
          // Toast for successful signUp
         toast.success("Sign-Up Successful 🎉🎉", {
           position: "top-center",
-          autoClose: 2000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -47,7 +49,7 @@ export const AuthContextProvider = ({ children }) => {
         // Toast for unsuccessful signUp
       toast.error(error.response.data.errors[0], {
         position: "top-center",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -66,14 +68,20 @@ export const AuthContextProvider = ({ children }) => {
         password: loginData.password,
       });
       if (response.status === 200) {
+      
+        setUserData(prev=>({...prev,"firstName":response.data.foundUser.firstName,"lastName":response.data.foundUser.lastName,"email":response.data.foundUser.email}))
+
         // saving the encodedToken in the localStorage
         localStorage.setItem("token", response.data.encodedToken);
+
         setLoginToken(response.data.encodedToken);
+
         navigate("/products");
+
          // Toast for successful login
         toast.success("Login Successful 🎉🎉", {
           position: "top-center",
-          autoClose: 2000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -88,7 +96,7 @@ export const AuthContextProvider = ({ children }) => {
       // Toast for unsuccessful sign-In
       toast.error(error.response.data.errors[0], {
         position: "top-center",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -98,12 +106,13 @@ export const AuthContextProvider = ({ children }) => {
         });
     }
   };
+  
 
   return (
     <>
      
       <authContext.Provider
-        value={{ loginToken, setLoginToken, signupHandler, signinHandler }}
+        value={{ loginToken, setLoginToken, signupHandler, signinHandler,userData,setUserData }}
       >
         {children}
       </authContext.Provider>

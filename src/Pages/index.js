@@ -8,3 +8,4 @@ export {SignIn} from "./SignIn/SignIn";
 export {SignUp} from "./SignUp/SignUp";
 export {UserProfile} from "./UserProfile/UserProfile";
 export {Wishlist} from "./Wishlist/Wishlist";
+export {Checkout} from "./Checkout/Checkout";

@@ -1,0 +1,63 @@
+.checkout-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.addressBox{
+  display: flex;
+  justify-content: center;
+}
+.priceDetailBox{
+  display: flex;
+    justify-content: center;
+}
+
+.checkoutPage-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: ui-monospace;
+    text-decoration: underline;
+    
+  }
+
+.singleAddress{
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 350px;
+    border-radius: 5px;
+    padding: 5px;
+    align-items: center;
+
+}
+
+@media (min-width:1024px) {
+  .checkout-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .singleAddress{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 450px;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    color: grey;
+    font-family: monospace;
+    font-size: 0.95rem;
+
+}
+.addressName{
+  color: black;
+  font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+  
+}

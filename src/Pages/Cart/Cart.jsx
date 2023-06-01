@@ -4,12 +4,14 @@ import { useAuthContext } from "../../context/auth/authContext";
 import { useEffect } from "react";
 import { initialCartState } from "../../reducers/CartReducer";
 import { CartItem } from "./components/CartItem";
+import { useNavigate } from "react-router-dom";
+import { PriceCard } from "./components/PriceCard";
 
 export const Cart = () => {
   const { cartState, deleteFromCart,TotalOriginalPrice,
     TotalCurrentPrice,
     productQty,TotalDiscount } = useCartContext();
-    console.log(cartState.cart)
+    const navigate=useNavigate();
 
   return (
     <>
@@ -23,43 +25,8 @@ export const Cart = () => {
             })}
           </ul>
         </div>
-        <div className="cart-product-priceDetail-section">
-          <h2>Price Details</h2>
-          <hr />
-          <div className="price-calculate-content">
-            <div>
-              <p>Price ({productQty} items)</p>
-              <p>₹ {TotalOriginalPrice}</p>
-            </div>
-            <div>
-              <p>Discount</p>
-              <p> - ₹{TotalDiscount}</p>
-            </div>
-            <div>
-              <p>Delivery Charges</p>
-              <p>FREE</p>
-            </div>
-            <div>
-              <p>Shipping Charges</p>
-              <p>FREE</p>
-            </div>
-            <hr />
-            <div>
-              <h3>Total Amount</h3>
-              <h3>₹ {TotalCurrentPrice}</h3>
-            </div>
-            <hr />
-            <p className="save-msg">
-              You will save ₹ {TotalDiscount} on this order
-            </p>
-            <button
-              className="checkout-btn"
-             
-            >
-              Checkout
-            </button>
-          </div>
-        </div>
+        <PriceCard/>
+        
       </div>}
     </>
   );
