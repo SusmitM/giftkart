@@ -8,7 +8,9 @@ export const CartReducer=(cartState,action)=>{
     case "deleteFromCart":
           return {...cartState,cart:action.payload}   
     case "updateCartQty":
-          return {...cartState,cart:action.payload}    
+          return {...cartState,cart:action.payload} 
+    case "clearCart":
+            return {...cartState,cart:[]}             
         
        
 

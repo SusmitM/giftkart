@@ -3,7 +3,9 @@ export const AddressReducer=(addressState,action)=>{
     switch (action.type) {
       case "addToAddressState":
           return {...addressState,address:[...addressState.address,{id:uuid(),...action.payload}]}  
-          
+      case "UpdateAddressState":
+            return {address:addressState.address.map(addressData=>addressData.id===action.payload.id ? action.payload : addressData)}      
+  
       default:
          return addressState;
   }

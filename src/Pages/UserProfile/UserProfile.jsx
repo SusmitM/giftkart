@@ -10,6 +10,7 @@ export const UserProfile = () => {
   const [selectedValue, setSelectedValue] = useState("Profile");
 
   const [showForm, setShowForm] = useState(false);
+  const [editing,setEditing]=useState(false);
   const [formData, setFormData] = useState({
     Name: '',
     City: '',
@@ -17,11 +18,27 @@ export const UserProfile = () => {
     Pincode: '',
     PhoneNo: '',
   });
+  console.log(addressState.address)
   const handleFormSubmit = () => {
-    addressDispatch({type:"addToAddressState",
-  payload:formData})
-   setShowForm(false);
+
+    if(editing){
+       addressDispatch({type:"UpdateAddressState",
+       payload:formData})
+        setShowForm(false);
+    }
+    else{
+      addressDispatch({type:"addToAddressState",
+      payload:formData})
+       setShowForm(false);
+       setEditing(false)
+    }
   };
+  const editForm=(selectedId)=>{
+    setShowForm(true);
+    setEditing(true);
+    setFormData(addressState.address.find(item=>item.id===selectedId))
+
+  }
 
   const handleCancel = () => {
     setFormData({
@@ -69,7 +86,7 @@ export const UserProfile = () => {
         {
           selectedValue=== "Address" &&(
             <div className="addressData">
-               <button onClick={() => setShowForm(true)}>Add New Address</button>
+               <button onClick={() =>{ setShowForm(true);setEditing(false)}}>Add New Address</button>
               <ol className="addressList">
                 {
                   addressState.address.map(addressData=><li className="individualAddress">
@@ -78,6 +95,7 @@ export const UserProfile = () => {
                     <div>State: {addressData.State}</div>
                     <div>PinCode: {addressData.Pincode}</div>
                     <div>PhoneNo: {addressData.PhoneNo}</div>
+                    <button onClick={()=>editForm(addressData.id)}>Edit</button>
                     </li>)
                 }
               </ol>
