@@ -28,7 +28,7 @@ export const Search = () => {
     useSpeechRecognition();
   const startListening = () => {
     setSearchData("");
-    SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
+    SpeechRecognition.startListening();
     toast.success("Started Listening...", {
       position: "top-left",
       autoClose: 1000,
