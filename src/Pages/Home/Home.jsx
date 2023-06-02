@@ -6,7 +6,7 @@ export const Home = () => {
   const navigate=useNavigate();
   return (
     <>
-    <div>Home</div>
+    <div style={{ marginTop:"60px"}}>Home</div>
     <button onClick={()=>navigate('/products')}>Products</button>
     </>
   )

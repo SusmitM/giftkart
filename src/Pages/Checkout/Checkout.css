@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+ 
 }
 .addressBox{
   display: flex;
@@ -33,7 +34,12 @@
 }
 
 @media (min-width:1024px) {
+  .checkoutPage-title{
+    margin-top: 67px;
+    
+  }
   .checkout-container{
+    margin-top: 67px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

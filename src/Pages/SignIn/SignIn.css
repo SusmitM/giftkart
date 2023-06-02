@@ -224,6 +224,7 @@
         justify-content: center;
         font-family: system-ui;
         height: 600px;
+        margin-top: 60px;
     }
 
     .signIn-header {

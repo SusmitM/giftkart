@@ -1,11 +1,11 @@
 .profileContainer{
     display: flex;
     flex-direction: column;
-    margin: 20px auto;
+    margin: 0px auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width:700px;
+    width:350px;
     border-radius: 10px;
-
+  
 }
 .headingContainer{
     display: flex;
@@ -116,4 +116,12 @@
     font-family: monospace;
     font-weight: 700;
     color: green;
+  }
+
+  @media (min-width:1024px){
+    .profileContainer{
+      margin: 150px auto;
+      width:700px;
+  }
+
   }
