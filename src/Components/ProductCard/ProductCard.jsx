@@ -85,6 +85,7 @@ export const ProductCard = ({ productData, page }) => {
         </button>
         <button
           className="add-toCart-btn"
+          disabled={outOfStock}
           onClick={() =>
             itemPresentInCart
               ? UpdateProductQty(_id, "increment")
