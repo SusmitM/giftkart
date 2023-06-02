@@ -1,10 +1,11 @@
-import React from 'react'
+
 import { useAuthContext } from '../../context/auth/authContext'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 export const PrivateRoute = ({children}) => {
+  let location = useLocation();
     const {loginToken}=useAuthContext();
-  return loginToken ? children : <Navigate to="/signin" />
+  return loginToken ? children : <Navigate to="/signin" state={{ from: location }} />
     
   
 }

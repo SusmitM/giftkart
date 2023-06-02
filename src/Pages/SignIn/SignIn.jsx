@@ -3,13 +3,14 @@ import "./SignIn.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useAuthContext } from "../../context/auth/authContext";
 import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
 
 
 export const SignIn = () => {
   const navigate = useNavigate();
+  
   const { signinHandler } = useAuthContext();
 
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -26,6 +27,7 @@ export const SignIn = () => {
       loginData.email.includes("@")
     ) {
       signinHandler(loginData);
+      // navigate(location?.state?.from?.pathname);
     } else {
        // Toast for invalid form format
        toast.error(' Invalid Form Format', {
@@ -42,6 +44,7 @@ export const SignIn = () => {
   }
   const  handelGuestLogin=()=>{
     signinHandler({ email: "adarshbalika@gmail.com", password: "adarshbalika" });
+    // navigate(location?.state?.from?.pathname);
 
   }
   const togglePassword=()=>{

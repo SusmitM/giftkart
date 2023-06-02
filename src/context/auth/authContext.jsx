@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,6 +11,7 @@ export const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const encodedToken = localStorage.getItem("token");
+  const location = useLocation();
  
   const [loginToken, setLoginToken] = useState(encodedToken);
   const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",order:[],orderAmount:"",address:[]})
@@ -30,7 +31,8 @@ export const AuthContextProvider = ({ children }) => {
         // saving the encodedToken in the localStorage
         localStorage.setItem("token", response.data.encodedToken);
         setLoginToken(response.data.encodedToken);
-        navigate("/products");
+        navigate("/signin");
+       
 
          // Toast for successful signUp
         toast.success("Sign-Up Successful 🎉🎉", {
@@ -75,8 +77,8 @@ export const AuthContextProvider = ({ children }) => {
         localStorage.setItem("token", response.data.encodedToken);
 
         setLoginToken(response.data.encodedToken);
+        navigate(location?.state?.from?.pathname ?? "/");
 
-        navigate("/products");
 
          // Toast for successful login
         toast.success("Login Successful 🎉🎉", {
