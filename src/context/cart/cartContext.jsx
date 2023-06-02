@@ -1,4 +1,4 @@
-import { useEffect, useContext, createContext, useReducer } from "react";
+import { useEffect, useContext, createContext, useReducer, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartReducer, initialCartState } from "../../reducers/CartReducer";
@@ -15,9 +15,11 @@ export const CartContextProvider = ({ children }) => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [cartState, cartDispatch] = useReducer(CartReducer, initialCartState);
+  const [cartLoading,setCartLoading]=useState(true);
 
   // get Cart Data feature
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getCartData = async () => {
     try {
       const response = await GetCartData(loginToken);
@@ -176,7 +178,8 @@ export const CartContextProvider = ({ children }) => {
 
   //load the existing cart data on first render
   useEffect(() => {
-    getCartData(localStorage.getItem("token"))
+    getCartData(localStorage.getItem("token"));
+    setCartLoading(false);
   
   }, [getCartData]);
 
@@ -184,6 +187,7 @@ export const CartContextProvider = ({ children }) => {
     <cartContext.Provider
       value={{
         cartState,
+        cartLoading,
         addToCart,
         getCartData,
         cartDispatch,

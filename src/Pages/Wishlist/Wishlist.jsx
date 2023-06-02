@@ -1,13 +1,19 @@
 import "./Wishlist.css";
 import { useWishlistContext } from "../../context/wishlist/wishlistContext";
 import { ProductCard } from "../../Components/ProductCard/ProductCard";
+import { Loader } from "../../Components";
+
+
+
+
 export const Wishlist = () => {
-  const { wishlistState, deleteFromWishlist } = useWishlistContext();
+  const { wishlistState, deleteFromWishlist,wishlistLoading } = useWishlistContext();
   
 
   return (
     <>
-     <div className="wishlist-section">
+     {wishlistLoading && <Loader/>}
+     {!wishlistLoading && <div className="wishlist-section">
      <div className="wishlist-section-header">
      <h1 className="wishlist-section-title">Wishlist</h1>
      {!wishlistState.wishlist.length>0 && <h1 className="wishlist-empty-title">Empty wishlist</h1>}
@@ -21,7 +27,7 @@ export const Wishlist = () => {
       </ul>
       </div>
       
-     </div>
+     </div>}
     </>
   );
 };

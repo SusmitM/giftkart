@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Product-Page.css";
-import { Filters } from "../../Components";
+import { Filters, Loader } from "../../Components";
 import { useDataContext } from "../../context/data/dataContext";
 import { FcFilledFilter } from "react-icons/fc";
 import { ProductCard } from "../../Components/ProductCard/ProductCard";
@@ -8,9 +8,8 @@ import { useFilterContext } from "../../context/filters/filterContext";
 
 export const ProductPage = () => {
   const [showFilters, setShowFilters] = useState(false);
-  const { productsData } = useDataContext();
+  const { productsData,Loading } = useDataContext();
   const { filterState } = useFilterContext();
-  console.log(filterState);
   const {
     Sort,
     PriceRange,
@@ -66,7 +65,9 @@ export const ProductPage = () => {
   };
 
   return (
-    <div className="product-page-container">
+   <>
+   {Loading && <Loader/>}
+   {!Loading &&  <div className="product-page-container">
       <div
         className="filter-section"
         style={{ display: showFilters ? "block" : "" }}
@@ -95,6 +96,7 @@ export const ProductPage = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </div>}
+   </>
   );
 };

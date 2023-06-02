@@ -28,6 +28,9 @@ export const DataContextProvider=( {children})=>{
     //Initializing the reducer state which will manage Product Data
     const [productState,productDispatch]=useReducer(reducer,{productData:[]})
 
+    //loading state
+    const [Loading,setLoading]=useState(true);
+
    // function to get the products data from backend and add the data to productState
     const getData=async ()=>{
         try{
@@ -46,12 +49,13 @@ export const DataContextProvider=( {children})=>{
     }
     //useEffect hook to call the getData() on initial render
     useEffect(()=>{
-        getData()
+        getData();
+        setLoading(false)
     },[])
 
 
     return(
-        <DataContext.Provider value={{productsData:productState.productData[0]}}>
+        <DataContext.Provider value={{productsData:productState.productData[0],Loading}}>
             {children}
         </DataContext.Provider>
     )

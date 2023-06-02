@@ -6,9 +6,9 @@ import { initialCartState } from "../../reducers/CartReducer";
 import { CartItem } from "./components/CartItem";
 import { useNavigate } from "react-router-dom";
 import { PriceCard } from "./components/PriceCard";
-
+import { Loader } from "../../Components";
 export const Cart = () => {
-  const { cartState, deleteFromCart,TotalOriginalPrice,
+  const { cartState, cartLoading, deleteFromCart,TotalOriginalPrice,
     TotalCurrentPrice,
     productQty,TotalDiscount } = useCartContext();
     const navigate=useNavigate();
@@ -16,8 +16,12 @@ export const Cart = () => {
   return (
     <>
       <div className="cartPage-title">My Cart ({productQty})</div>
-      {cartState.cart.length===0 && <h2> Cart is Empty</h2>}
-      {cartState.cart.length>0 &&  <div className="cart-container">
+      {cartLoading && <Loader/>}
+      {
+      !cartLoading && cartState.cart.length===0 && <h2> Cart is Empty</h2>
+      }
+      {
+      !cartLoading && cartState.cart.length>0 &&  <div className="cart-container">
         <div className="cart-product-section">
           <ul>
             {cartState.cart.map((product) => {
@@ -27,7 +31,8 @@ export const Cart = () => {
         </div>
         <PriceCard/>
         
-      </div>}
+      </div>
+      }
     </>
   );
 };

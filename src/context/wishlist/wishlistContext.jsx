@@ -1,4 +1,4 @@
-import { useContext, useReducer, useEffect } from "react";
+import { useContext, useReducer, useEffect,useState } from "react";
 import { createContext } from "react";
 
 import {toast } from "react-toastify";
@@ -20,9 +20,11 @@ export const WishlistContextProvider = ({ children }) => {
     WishlistReducer,
     initialWishlistState
   );
+  const [wishlistLoading,setWishlistLoading]=useState(true);
 
   // get Wishlist Data feature
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getWishlistData = async () => {
     try {
       const response = await GetWishlistData(loginToken);
@@ -121,7 +123,8 @@ export const WishlistContextProvider = ({ children }) => {
 
   //load the existing wishlist data on first render
   useEffect(() => {
-    getWishlistData(localStorage.getItem("token"))
+    getWishlistData(localStorage.getItem("token"));
+    setWishlistLoading(false);
   
   }, [getWishlistData]);
 
@@ -133,6 +136,7 @@ export const WishlistContextProvider = ({ children }) => {
           addToWishlist,
           deleteFromWishlist,
           itemInWishlist,
+          wishlistLoading
         }}
       >
         {children}
