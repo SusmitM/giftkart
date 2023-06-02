@@ -89,11 +89,12 @@ export const ProductPage = () => {
         </div>
 
         <div className="product-section">
-          <ul className="product-list">
+          {filteredData().length > 0 ?<ul className="product-list">
             {filteredData().map((product) => {
               return <ProductCard key={product._id} productData={product} />;
             })}
-          </ul>
+          </ul> :<h2>No Products Found...</h2>}
+          
         </div>
       </div>
     </div>}

@@ -94,11 +94,15 @@ export const Filters = ({ toggleFilterDisplay }) => {
             <input
               type="range"
               min="50"
-              max="2500"
+              max="2000"
               value={PriceRange}
               className="slider"
               onChange={(e) => priceFilter(e)}
             />
+            <div className="rangeLabel">
+              <p>₹ 50</p>
+              <p>₹ 2500</p>
+            </div>
           </div>
           <hr />
         </div>

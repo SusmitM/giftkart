@@ -61,7 +61,11 @@
     font-family: sans-serif;
 
 }
-
+.rangeLabel{
+    display: flex;
+justify-content: space-between;
+margin-top: -13px;
+}
 
 
 /* //Media Queries */
@@ -155,6 +159,11 @@
         font-weight: 600;
         color: black;
 
+    }
+    .rangeLabel{
+        display: flex;
+    justify-content: space-around;
+    margin-top: -16px;
     }
 
     .clearBtn {
