@@ -160,6 +160,14 @@ export const CartContextProvider = ({ children }) => {
       });
     }
   };
+  
+  //function to clear the cart
+  const clearCart=()=>{
+   cartState.cart.map(item=>DeleteFromCart(item._id,loginToken))
+
+    }
+    
+
 
   // function to find if an item is in cart or not
   const itemInCart = (productId) => {
@@ -211,6 +219,7 @@ export const CartContextProvider = ({ children }) => {
         productQty,
         TotalDiscount,
         cartSize,
+        clearCart
       }}
     >
       {children}

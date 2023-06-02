@@ -14,9 +14,10 @@ export const PriceCard = ({ page, selectedAddress }) => {
     TotalCurrentPrice,
     productQty,
     TotalDiscount,
+    clearCart
    
   } = useCartContext();
-  const { setUserData, setSelectedValue } = useAuthContext();
+  const { setUserData, setSelectedValue,loginToken } = useAuthContext();
   const navigate = useNavigate();
 
   const handelPlaceOrder = () => {
@@ -26,9 +27,11 @@ export const PriceCard = ({ page, selectedAddress }) => {
         order: [cartState.cart],
         orderAmount: TotalCurrentPrice,
         address: [selectedAddress],
+        token:loginToken
       }));
-      cartDispatch({ type: "clearCart" });
+     
       setSelectedValue("Orders")
+      clearCart()
       navigate("/userProfile")
       // Toast for successful order placement
       toast.success("Order Placed Successfully 🎉🎉", {

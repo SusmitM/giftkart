@@ -166,7 +166,7 @@ console.log(userData)
             )
         }
         {selectedValue==="Orders" && 
-         ( userData["order"][0] ? <div className="orderData">
+         ( userData.token ===localStorage.getItem("token") && userData["order"][0] ? <div className="orderData">
          <div className="orderData-heading">Total Price: ₹{userData.orderAmount}</div>
          <div className="paymentStatus">Payment: Pending</div>
          <hr/>

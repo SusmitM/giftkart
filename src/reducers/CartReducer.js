@@ -10,7 +10,7 @@ export const CartReducer=(cartState,action)=>{
     case "updateCartQty":
           return {...cartState,cart:action.payload} 
     case "clearCart":
-            return {cart:[]}             
+          return {...cartState,cart:action.payload}             
         
        
 
