@@ -12,25 +12,11 @@ import { useWishlistContext } from "../../context/wishlist/wishlistContext";
 
 export const Navigation = () => {
   const navigate = useNavigate();
-  const {loginToken, setLoginToken } = useAuthContext();
+  const {loginToken,handelLogout } = useAuthContext();
   const {filterDispatch}=useFilterContext();
   const{cartSize}=useCartContext();
   const{ wishlistSize}=useWishlistContext();
-  const handelLogout=()=>{
-    localStorage.removeItem("token");
-    setLoginToken(false);
-    navigate("/");
-    toast.success("Sign-out Successful", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  }
+  
   return (
     <div className="navigation">
       <ToastContainer

@@ -9,13 +9,26 @@ const authContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
-
-  const encodedToken = localStorage.getItem("token");
   const location = useLocation();
- 
+
+  //getting the encoded token from local storage
+  const encodedToken = localStorage.getItem("token");
+
+   //getting the userData from local storage
+  const localStorageUserData = JSON.parse(localStorage.getItem("profileData"));
+
+ //state to manage the state of encoded token
   const [loginToken, setLoginToken] = useState(encodedToken);
-  const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",order:[],orderAmount:"",address:[]})
-  const [selectedValue, setSelectedValue] = useState("Profile");
+
+   //state to manage the state of profile data that comes from signin api
+  const[profileData,setProfileData]=useState(localStorageUserData?.user);
+
+ //state to manage the order state locally
+  const [userData,setUserData]=useState({order:[],orderAmount:"",address:[]});
+
+  //state to manage the selected value of userProfile page
+const [selectedValue, setSelectedValue] = useState("Profile");
+
   
   //Sign-Up functionality
 
@@ -71,10 +84,16 @@ export const AuthContextProvider = ({ children }) => {
       });
       if (response.status === 200) {
       
-        setUserData(prev=>({...prev,"firstName":response.data.foundUser.firstName,"lastName":response.data.foundUser.lastName,"email":response.data.foundUser.email}))
-
+      
         // saving the encodedToken in the localStorage
         localStorage.setItem("token", response.data.encodedToken);
+
+        //saving userData  in the localStorage
+        localStorage.setItem(
+          "profileData",
+          JSON.stringify({ user:response.data.foundUser})
+        );
+        setProfileData(response.data.foundUser)
 
         setLoginToken(response.data.encodedToken);
         navigate(location?.state?.from?.pathname ?? "/");
@@ -108,6 +127,24 @@ export const AuthContextProvider = ({ children }) => {
         });
     }
   };
+
+  //logout function
+  const handelLogout=()=>{
+    localStorage.removeItem("token");
+    localStorage.removeItem("profileData");
+    setLoginToken(false);
+    navigate("/");
+    toast.success("Sign-out Successful", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
   //loading the auth token on initial render
   useEffect(() => {
     setLoginToken(localStorage.getItem("token"))
@@ -118,7 +155,7 @@ export const AuthContextProvider = ({ children }) => {
     <>
      
       <authContext.Provider
-        value={{ loginToken, setLoginToken, signupHandler, signinHandler,userData,setUserData,selectedValue,setSelectedValue }}
+        value={{ loginToken, setLoginToken, signupHandler, signinHandler,profileData,userData,setUserData,selectedValue,setSelectedValue,handelLogout}}
       >
         {children}
       </authContext.Provider>

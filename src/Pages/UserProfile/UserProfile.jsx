@@ -4,7 +4,7 @@ import { useAuthContext } from "../../context/auth/authContext";
 import { useAddressContext } from "../../context/address/addressContext";
 
 export const UserProfile = () => {
-  const{userData,selectedValue, setSelectedValue}=useAuthContext();
+  const{userData,selectedValue, setSelectedValue,profileData}=useAuthContext();
   const {addressState,addressDispatch}=useAddressContext();
   const headings = ["Profile", "Address", "Orders"];
   
@@ -81,8 +81,8 @@ console.log(userData)
 
         {selectedValue=== "Profile" && (
           <div className="userData">
-            <p className="userName">Name:{userData.firstName}{userData.lastName} </p>
-            <p className="userEmail">Email:{userData.email}</p>
+            <p className="userName">Name:{profileData.firstName}{profileData.lastName} </p>
+            <p className="userEmail">Email:{profileData.email}</p>
             
           </div>
         )}
