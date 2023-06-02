@@ -111,9 +111,23 @@
     margin-top: 25px;
     transform: rotate(-16deg);
     color: black;
-    z-index: 999;
     letter-spacing: 11px;
     text-shadow: 0 0 3px #073fb1, 0 0 5px #d7d7df;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    background: black;
+    margin-top: 1rem;
+    padding: 1.5rem 0;
+
+   
+}
+.footer span{
+    text-align: center;
+    color:white;
+    opacity: .5;
+    font-size: 18px;
 }
 
 @media (min-width: 1024px) {
@@ -185,7 +199,6 @@
         margin-top: 25px;
         transform: rotate(-16deg);
         color: black;
-        z-index: 999;
         letter-spacing: 7px;
         text-shadow: 1px -1px 8px #0c0577, 0 0 5px #d7d7df;
     }

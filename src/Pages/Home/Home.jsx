@@ -33,6 +33,9 @@ export const Home = () => {
           <span className="Category-name">Classic</span>
         </div>
       </div>
+      <section id="about" className='footer'>
+    <span>Developed by Susmit Mukherjee @ 2023</span>
+  </section>
     </>
   );
 };
