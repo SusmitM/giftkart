@@ -11,8 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../../context/cart/cartContext";
 import { useWishlistContext } from "../../context/wishlist/wishlistContext";
+import { useAuthContext } from "../../context/auth/authContext";
 
 export const SingleProductCard = ({ selectedProduct }) => {
+  const { loginToken }=useAuthContext();
   const navigate=useNavigate();
   const {
     _id,
@@ -89,14 +91,14 @@ export const SingleProductCard = ({ selectedProduct }) => {
           <div className="buttonContainer">
             <button
               className="addToCart"
-              disabled={outOfStock ? true : false}
-              onClick={()=>itemPresentInCart ? navigate(`/cart`):addToCart(selectedProduct)}
+              disabled={outOfStock}
+              onClick={()=>loginToken? itemPresentInCart ? navigate(`/cart`):addToCart(selectedProduct) : navigate("/signin")}
             >
               <FontAwesomeIcon icon={faCartShopping} />{itemPresentInCart ? "Go to Cart" : "Add to Cart"}
             </button>
-            <button className="addToWishlist" onClick={()=>itemPresentInWishlist ? navigate(`/wishlist`):addToWishlist(selectedProduct)}>
+            <button className="addToWishlist" onClick={()=>loginToken ? itemPresentInWishlist ? navigate(`/wishlist`):addToWishlist(selectedProduct) : navigate("/signin")}>
               {" "}
-              <FontAwesomeIcon icon={faHeart} />{itemPresentInWishlist? "Go to Wishlist":" Add to Wishlist"}
+              <FontAwesomeIcon icon={faHeart} />{ itemPresentInWishlist? "Go to Wishlist":" Add to Wishlist"}
             </button>
           </div>
         </div>

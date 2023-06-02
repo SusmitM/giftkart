@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../../context/cart/cartContext";
 import { useWishlistContext } from "../../context/wishlist/wishlistContext";
+import { useAuthContext } from "../../context/auth/authContext";
 
-export const ProductCard = ({ productData,page }) => {
+export const ProductCard = ({ productData, page }) => {
   const navigate = useNavigate();
   const {
     _id,
@@ -21,9 +22,8 @@ export const ProductCard = ({ productData,page }) => {
     rating,
     category,
     fastDelivery,
-    
   } = productData;
-
+  const { loginToken } = useAuthContext();
   const { addToCart, itemInCart, UpdateProductQty } = useCartContext();
   const { addToWishlist, itemInWishlist, deleteFromWishlist } =
     useWishlistContext();
@@ -69,26 +69,31 @@ export const ProductCard = ({ productData,page }) => {
           <span className="originalPrice">{originalPrice}</span>
         </div>
 
-        
         <button
           className="add-toCart-btn"
+          disabled={outOfStock}
           onClick={() =>
-            itemPresentInCart ? navigate("/cart") : addToCart(productData)
+            loginToken
+              ? (itemPresentInCart
+                ? navigate("/cart")
+                : addToCart(productData)
+              ): navigate("/signin")
           }
-          style={{display : page==="wishlistPage" ? "none" :""}}
+          style={{ display: page === "wishlistPage" ? "none" : "" }}
         >
           {itemPresentInCart ? "Go to Cart" : "ADD to CART"}
         </button>
         <button
           className="add-toCart-btn"
           onClick={() =>
-            itemPresentInCart ?  UpdateProductQty(_id,"increment") : addToCart(productData)
+            itemPresentInCart
+              ? UpdateProductQty(_id, "increment")
+              : addToCart(productData)
           }
-          style={{display : page==="wishlistPage" ? "" :"none"}}
+          style={{ display: page === "wishlistPage" ? "" : "none" }}
         >
           {itemPresentInCart ? "Already in Cart" : "ADD to CART"}
         </button>
-       
       </div>
       <Tippy
         content={
@@ -102,10 +107,10 @@ export const ProductCard = ({ productData,page }) => {
         <span
           className="wishlist-btn"
           role="button"
-          onClick={() =>
+          onClick={() => loginToken ?(
             itemPresentInWishlist
               ? deleteFromWishlist(_id)
-              : addToWishlist(productData)
+              : addToWishlist(productData) ):navigate("/signin")
           }
         >
           {itemPresentInWishlist ? (
