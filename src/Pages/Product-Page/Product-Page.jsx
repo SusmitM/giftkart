@@ -77,7 +77,7 @@ export const ProductPage = () => {
 
       <div className="productDisplay-section">
         <div className="productDisplay-section-header">
-          <h1 className="productDisplay-section-title">Products</h1>
+          <h1 className="productDisplay-section-title">Products({filteredData().length})</h1>
           <button className="filterBtn" onClick={() => toggleFilterDisplay()}>
             Filters <FcFilledFilter />
           </button>

@@ -94,7 +94,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
             <input
               type="range"
               min="50"
-              max="1000"
+              max="2500"
               value={PriceRange}
               className="slider"
               onChange={(e) => priceFilter(e)}
