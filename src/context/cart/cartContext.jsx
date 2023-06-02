@@ -176,8 +176,9 @@ export const CartContextProvider = ({ children }) => {
 
   //load the existing cart data on first render
   useEffect(() => {
-    loginToken && getCartData();
-  }, []);
+    getCartData(localStorage.getItem("token"))
+  
+  }, [getCartData]);
 
   return (
     <cartContext.Provider

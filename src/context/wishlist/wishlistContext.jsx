@@ -121,8 +121,9 @@ export const WishlistContextProvider = ({ children }) => {
 
   //load the existing wishlist data on first render
   useEffect(() => {
-    loginToken && getWishlistData();
-  }, []);
+    getWishlistData(localStorage.getItem("token"))
+  
+  }, [getWishlistData]);
 
   return (
     <>

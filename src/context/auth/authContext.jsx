@@ -11,7 +11,7 @@ export const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const encodedToken = localStorage.getItem("token");
-
+ 
   const [loginToken, setLoginToken] = useState(encodedToken);
   const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",order:[],orderAmount:"",address:[]})
   const [selectedValue, setSelectedValue] = useState("Profile");
@@ -106,7 +106,11 @@ export const AuthContextProvider = ({ children }) => {
         });
     }
   };
+  //loading the auth token on initial render
+  useEffect(() => {
+    setLoginToken(localStorage.getItem("token"))
   
+  }, []);
 
   return (
     <>
