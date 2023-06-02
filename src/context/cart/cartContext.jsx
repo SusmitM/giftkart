@@ -1,4 +1,10 @@
-import { useEffect, useContext, createContext, useReducer, useState } from "react";
+import {
+  useEffect,
+  useContext,
+  createContext,
+  useReducer,
+  useState,
+} from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartReducer, initialCartState } from "../../reducers/CartReducer";
@@ -15,7 +21,7 @@ export const CartContextProvider = ({ children }) => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [cartState, cartDispatch] = useReducer(CartReducer, initialCartState);
-  const [cartLoading,setCartLoading]=useState(true);
+  const [cartLoading, setCartLoading] = useState(true);
 
   // get Cart Data feature
 
@@ -122,8 +128,12 @@ export const CartContextProvider = ({ children }) => {
           type: "updateCartQty",
           payload: response?.data?.cart,
         });
-          // Toast for updating cart quantity
-          toast.success(`Successfully ${actionType==="increment" ? "increased" :"decreased"} item quantity`, {
+        // Toast for updating cart quantity
+        toast.success(
+          `Successfully ${
+            actionType === "increment" ? "increased" : "decreased"
+          } item quantity`,
+          {
             position: "top-left",
             autoClose: 1000,
             hideProgressBar: false,
@@ -132,7 +142,8 @@ export const CartContextProvider = ({ children }) => {
             draggable: true,
             progress: undefined,
             theme: "light",
-          });
+          }
+        );
       }
     } catch (error) {
       console.error(error);
@@ -155,6 +166,9 @@ export const CartContextProvider = ({ children }) => {
     return cartState.cart.find((product) => product._id === productId);
   };
 
+  // cart size
+  const cartSize = cartState.cart.length;
+
   // total products in cart
 
   const productQty = cartState.cart.reduce((acc, crr) => acc + crr.qty, 0);
@@ -172,15 +186,13 @@ export const CartContextProvider = ({ children }) => {
     (acc, crr) => acc + crr.currentPrice * crr.qty,
     0
   );
-    // Total Discount
-    const TotalDiscount=TotalOriginalPrice-TotalCurrentPrice
-  
+  // Total Discount
+  const TotalDiscount = TotalOriginalPrice - TotalCurrentPrice;
 
   //load the existing cart data on first render
   useEffect(() => {
     getCartData(localStorage.getItem("token"));
     setCartLoading(false);
-  
   }, [getCartData]);
 
   return (
@@ -197,7 +209,8 @@ export const CartContextProvider = ({ children }) => {
         TotalOriginalPrice,
         TotalCurrentPrice,
         productQty,
-        TotalDiscount
+        TotalDiscount,
+        cartSize,
       }}
     >
       {children}

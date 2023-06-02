@@ -1,16 +1,36 @@
 import "./Navigation.css";
 import { ToastContainer, toast } from "react-toastify";
 import { IoIosArrowDown } from "react-icons/io";
+import {FaPowerOff,FaSignInAlt} from "react-icons/fa";
 import { FiSearch, FiShoppingBag } from "react-icons/fi";
 import { BsHeart, BsPerson, BsGift } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/auth/authContext";
 import { useFilterContext } from "../../context/filters/filterContext";
+import { useCartContext } from "../../context/cart/cartContext";
+import { useWishlistContext } from "../../context/wishlist/wishlistContext";
 
 export const Navigation = () => {
   const navigate = useNavigate();
-  const { setLoginToken } = useAuthContext();
+  const {loginToken, setLoginToken } = useAuthContext();
   const {filterDispatch}=useFilterContext();
+  const{cartSize}=useCartContext();
+  const{ wishlistSize}=useWishlistContext();
+  const handelLogout=()=>{
+    localStorage.removeItem("token");
+    setLoginToken(false);
+    navigate("/");
+    toast.success("Sign-out Successful", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
   return (
     <div className="navigation">
       <ToastContainer
@@ -57,36 +77,24 @@ export const Navigation = () => {
         <li className="nav-link" onClick={() => navigate("/search")}>
           <FiSearch />
         </li>
+        <span>
         <li className="nav-link" onClick={() => navigate("/cart")}>
           <FiShoppingBag />
         </li>
-        <li className="nav-link" onClick={() => navigate("/wishlist")}>
+        <span className="cartCount">{cartSize}</span>
+        </span>
+       <span>
+       <li className="nav-link" onClick={() => navigate("/wishlist")}>
           <BsHeart />
         </li>
+        <span  className="wishlistCount">{wishlistSize}</span>
+        
+       </span>
         <li className="nav-link" onClick={() => navigate("/userProfile")}>
           <BsPerson />
         </li>
       </ul>
-      <button
-        className="logOut-Btn"
-        onClick={() => {
-          localStorage.removeItem("token");
-          setLoginToken(false);
-          navigate("/");
-          toast.success("Sign-out Successful", {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-        }}
-      >
-        Log-Out
-      </button>
+      <span className="loginAction" onClick={()=>{loginToken ? handelLogout():navigate("/signin") }}>{loginToken ?  <FaPowerOff/> :<FaSignInAlt />}</span>
     </div>
   );
 };

@@ -29,8 +29,6 @@ export const ProductCard = ({ productData,page }) => {
     useWishlistContext();
   const itemPresentInCart = itemInCart(_id);
   const itemPresentInWishlist = itemInWishlist(_id);
-  console.log(page)
-
   return (
     <div className="product-card" key={_id}>
       <span className="cardHeader" onClick={() => navigate(`/products/${_id}`)}>

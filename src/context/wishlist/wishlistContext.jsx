@@ -120,6 +120,9 @@ export const WishlistContextProvider = ({ children }) => {
   const itemInWishlist = (productId) => {
     return wishlistState.wishlist.find((product) => product._id === productId);
   };
+   // wishlist size
+
+   const wishlistSize= wishlistState.wishlist.length;
 
   //load the existing wishlist data on first render
   useEffect(() => {
@@ -127,6 +130,7 @@ export const WishlistContextProvider = ({ children }) => {
     setWishlistLoading(false);
   
   }, [getWishlistData]);
+  
 
   return (
     <>
@@ -136,7 +140,8 @@ export const WishlistContextProvider = ({ children }) => {
           addToWishlist,
           deleteFromWishlist,
           itemInWishlist,
-          wishlistLoading
+          wishlistLoading,
+          wishlistSize
         }}
       >
         {children}
