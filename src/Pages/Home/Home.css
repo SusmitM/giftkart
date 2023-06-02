@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+.home-header {
+    display: flex;
+    justify-content: center;
+}
+
+.heroImage {
+    height: 26rem;
+    width: 94%;
+    border-radius: 3px;
+}
+
+.heroText {
+    font-size: 1.3rem;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 60%;
+    font-family: 'Gugi', cursive;
+}
+
+.productsBtn {
+    font-family: 'Gugi', cursive;
+    font-weight: 500;
+    font-size: smaller;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cartoon-Category {
+    height: 220px;
+    width: 170px;
+    margin: auto;
+    background-image: url('../../assets/cartoonTheme.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gugi', cursive;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-position: top;
+}
+
+.sport-Category {
+    height: 220px;
+    width: 170px;
+    margin: auto;
+    background-image: url('../../assets/sportsTheme.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gugi', cursive;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-position: top;
+}
+
+.modern-Category {
+    height: 220px;
+    width: 170px;
+    margin: auto;
+    background-image: url('../../assets/modernTheme.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gugi', cursive;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-position: top;
+}
+
+.classic-Category {
+    height: 220px;
+    width: 170px;
+    margin: auto;
+    background-image: url('../../assets/classicTheme.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gugi', cursive;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-position: top;
+}
+
+.Category-name {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-top: 25px;
+    transform: rotate(-16deg);
+    color: black;
+    z-index: 999;
+    letter-spacing: 11px;
+    text-shadow: 0 0 3px #073fb1, 0 0 5px #d7d7df;
+}
+
+@media (min-width: 1024px) {
+    .home-header {
+        margin-top: 60px;
+    }
+
+    .category-container h2 {
+        width: 100%;
+        font-size: 2rem;
+    font-weight: 600;
+    text-decoration: underline;
+    }
+
+    .category-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    .cartoon-Category {
+        height: 400px;
+        width: 500px;
+        margin: 6px 40px;
+        border: 1.5px solid grey;
+        cursor: pointer;
+
+
+    }
+
+    .sport-Category {
+        height: 400px;
+        width: 500px;
+        margin: 6px 40px;
+        border: 1.5px solid grey;
+        cursor: pointer;
+
+
+
+    }
+
+    .modern-Category {
+        height: 400px;
+        width: 500px;
+        margin: 6px 40px;
+        border: 1.5px solid grey;
+        cursor: pointer;
+
+
+
+    }
+
+    .classic-Category {
+        height: 400px;
+        width: 500px;
+        margin: 6px 40px;
+        border: 1.5px solid grey;
+        cursor: pointer;
+
+
+    }
+    .Category-name {
+        font-size: 4rem;
+        font-weight: 500;
+        margin-top: 25px;
+        transform: rotate(-16deg);
+        color: black;
+        z-index: 999;
+        letter-spacing: 7px;
+        text-shadow: 1px -1px 8px #0c0577, 0 0 5px #d7d7df;
+    }
+
+}
