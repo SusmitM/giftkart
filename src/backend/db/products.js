@@ -55,7 +55,7 @@ export const products = [
     originalPrice: 700,
     category: "Classic",
     rating: 5,
-    fastDelivery:false,
+    fastDelivery:true,
     outOfStock:true,
     product:"Mugs"
   },
@@ -68,7 +68,7 @@ export const products = [
     originalPrice: 499,
     category: "Classic",
     rating: 4,
-    fastDelivery:true,
+    fastDelivery:false,
     outOfStock:false,
     product:"Mugs"
   },
@@ -198,7 +198,7 @@ export const products = [
     originalPrice: 2000,
     category: "Sport",
     rating: 2.5,
-    fastDelivery:false,
+    fastDelivery:true,
     outOfStock:true,
     product:"Lamps"
   },

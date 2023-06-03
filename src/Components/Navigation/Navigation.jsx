@@ -63,14 +63,14 @@ export const Navigation = () => {
         <li className="nav-link" onClick={() => navigate("/search")}>
           <FiSearch />
         </li>
-        <span>
-        <li className="nav-link" onClick={() => navigate("/cart")}>
+        <span onClick={() => navigate("/cart")}>
+        <li className="nav-link" >
           <FiShoppingBag />
         </li>
         <span className="cartCount">{cartSize}</span>
         </span>
-       <span>
-       <li className="nav-link" onClick={() => navigate("/wishlist")}>
+       <span  onClick={() => navigate("/wishlist")}>
+       <li className="nav-link">
           <BsHeart />
         </li>
         <span  className="wishlistCount">{wishlistSize}</span>

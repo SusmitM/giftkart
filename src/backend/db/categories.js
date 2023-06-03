@@ -7,21 +7,27 @@ import { v4 as uuid } from "uuid";
 
 export const categories = [
   {
-    _id: uuid(),
-    categoryName: "fiction",
+    _id: "1166b875-f318-401a-b20a-e2b2fec3c0e4",
+    categoryName: "Cartoon",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "",
   },
   {
-    _id: uuid(),
-    categoryName: "non-fiction",
+    _id: "913fb5f8-77fe-4341-94b8-8f8bf1e8e913",
+    categoryName: "Sport",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "",
   },
   {
-    _id: uuid(),
-    categoryName: "horror",
+    _id: "1c284595-3bf9-47ed-974a-36072e561467",
+    categoryName: "Modern",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "",
+  },
+  {
+    _id: "58d9050c-6748-4de1-9ef8-c922ac88e0c5",
+    categoryName: "Classic",
+    description:
+      "",
   },
 ];

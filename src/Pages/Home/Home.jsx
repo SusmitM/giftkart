@@ -13,7 +13,7 @@ export const Home = () => {
         <div className="heroText">
           <h2>Awesome Gifts</h2>
           <h2>For Your Loved Ones</h2>
-          <button className="productsBtn" onClick={() => navigate("/products")}>
+          <button className="productsBtn" onClick={() => { filterDispatch({ type: "Clear-All" });navigate("/products")}}>
             Shop Now
           </button>
         </div>
