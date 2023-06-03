@@ -44,7 +44,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
   };
   return (
     <div className="filter-box">
-      <div className="filter-container" style={{ maxHeight: "400px", overflowY: "auto" }}>
+      <div className="filter-container">
         <div className="filter-heading">
           <span className="label">Filters:</span>
           <button
