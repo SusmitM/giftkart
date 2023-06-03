@@ -32,7 +32,7 @@ export const Navigation = () => {
         theme="light"
       />
      
-        <p className="nav-logo" onClick={()=>navigate("/")}>
+        <p className="nav-logo" onClick={()=>{navigate("/");filterDispatch({ type: "Clear-All"})}}>
           <BsGift />
           GiftKart
         </p>

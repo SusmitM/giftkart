@@ -108,7 +108,7 @@ console.log(userData)
       pay.open();
     }
   }
-
+  
   return (
     <div className="profileContainer">
       <div className="headingContainer">
@@ -131,8 +131,8 @@ console.log(userData)
 
         {selectedValue=== "Profile" && (
           <div className="userData">
-            <p className="userName">Name:{profileData.firstName}{profileData.lastName} </p>
-            <p className="userEmail">Email:{profileData.email}</p>
+            <p className="userName">Name: {profileData.firstName} {profileData.lastName} </p>
+            <p className="userEmail">Email: {profileData.email}</p>
             
           </div>
         )}
