@@ -163,7 +163,7 @@ export const CartContextProvider = ({ children }) => {
   
   //function to clear the cart
   const clearCart=()=>{
-   cartState.cart.map(item=>DeleteFromCart(item._id,loginToken))
+   cartState.cart.map(item=>deleteFromCart(item._id))
 
     }
     

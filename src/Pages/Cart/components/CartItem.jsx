@@ -24,6 +24,12 @@ export const CartItem = ({ productData }) => {
     const ItemPresentInWishlist=itemInWishlist(_id);
     const navigate=useNavigate();
 
+    const moveToWishlsit=()=>{
+      addToWishlist(productData);
+      deleteFromCart(_id);
+
+    }
+
   return (
     <div className="cartItem-container">
       <div className="cartItem-image-section">
@@ -45,7 +51,7 @@ export const CartItem = ({ productData }) => {
       
       <div className="cartItem-action-section">
         <button className="remove-cartItemBtn" onClick={()=>deleteFromCart(_id)}>Remove</button>
-        <button className="moveToWishlistBtn" onClick={()=>ItemPresentInWishlist ? navigate("/wishlist") : addToWishlist(productData) }>{ItemPresentInWishlist ? "Already in Wishlist": "Move To Wishlist"}</button>
+        <button className="moveToWishlistBtn" onClick={()=>ItemPresentInWishlist ? navigate("/wishlist") : moveToWishlsit()  }>{ItemPresentInWishlist ? "Already in Wishlist": "Move To Wishlist"}</button>
       </div>
     </div>
   );
