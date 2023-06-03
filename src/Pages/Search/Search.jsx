@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -11,6 +11,7 @@ import { BsSearch, BsFillMicFill, BsFillMicMuteFill } from "react-icons/bs";
 import "./Search.css";
 
 export const Search = () => {
+  const [isListening, setIsListening] = useState(false);
   const { productsData } = useDataContext();
   const [searchData, setSearchData] = useState("");
   const searchFilteredData = () => {
@@ -29,6 +30,7 @@ export const Search = () => {
   const startListening = () => {
     setSearchData("");
     SpeechRecognition.startListening();
+    setIsListening((prev) => !prev);
     toast.success("Started Listening...", {
       position: "top-left",
       autoClose: 1000,
@@ -43,6 +45,8 @@ export const Search = () => {
   const stopListening = () => {
     SpeechRecognition.stopListening();
     setSearchData(transcript);
+    setIsListening((prev) => !prev);
+
     toast.success("Stopped Listening...", {
       position: "top-left",
       autoClose: 1000,
@@ -72,31 +76,47 @@ export const Search = () => {
               onChange={(e) => setSearchData(e.target.value)}
             />
           </div>
-          <span
+          <p
             style={{
               display: "flex",
               alignItems: "center",
-              marginRight: "25px",
+              marginLeft: "15px",
+              color: "green",
+              cursor:"pointer"
             }}
             onClick={() => startListening()}
           >
-            <BsFillMicFill />
-          </span>
-          <span
-            style={{ display: "flex", alignItems: "center" }}
+            <span style={{ display: isListening ? "none" : "" }}>
+              {" "}
+              Start Listening
+              <BsFillMicFill />
+            </span>
+          </p>
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginLeft: "15px",
+              color: "red",
+              cursor:"pointer"
+            }}
             onClick={() => {
               stopListening();
             }}
           >
-            <BsFillMicMuteFill />
-          </span>
+            <span style={{ display: isListening ? "" : "none" }}>
+              Stop Listening
+              <BsFillMicMuteFill />
+            </span>
+          </p>
         </div>
         <div className="product-display-container">
           <ul className="product-list">
-            {searchFilteredData().map((product) => {
+            { searchFilteredData().length>0 && searchFilteredData().map((product) => {
               return <ProductCard key={product._id} productData={product} />;
             })}
           </ul>
+          { !searchFilteredData().length>0 && <div>No Products Found...</div>}
         </div>
       </div>
     </>
