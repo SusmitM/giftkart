@@ -21,7 +21,6 @@ console.log(userData)
     Pincode: '',
     PhoneNo: '',
   });
-  console.log(userData["order"][0])
   const handleFormSubmit = () => {
 
     if(editing){
@@ -221,14 +220,10 @@ console.log(userData)
          <div className="paymentId" style={{display:userData.paymentId ? "" :"none"}}>PaymentId: {userData.paymentId}</div>
          <button className="paymentBtn" style={{display:userData.paymentId ? "none" :""}} onClick={ ()=>makePayment(userData.orderAmount)}>Pay</button>
          <div className="paymentGuid" style={{display:userData.paymentId ? "none" :""}}>
-          <h3>Follow the following steps to make an Dummy Payment</h3>
+          <h3>Follow the following step to make an Mock Payment.</h3>
           <ol>
-            <li>Select Card as Payment Mode</li>
-            <li>Input Card Number as 4111 1111 1111 1111</li>
-            <li>Input Expiry as 04/24 </li>
-            <li>Input CVV as 123</li>
-            <li>Then Select Pay without saving card</li>
-            <li>Input the OTP as 12345678</li>
+            <li>Select UPI as payment mode and <b>123@sbi</b> as UPI Id.</li>
+           
           </ol>
          </div>
          <hr/>
