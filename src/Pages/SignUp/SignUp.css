@@ -5,7 +5,7 @@
     justify-content: center;
     font-family: system-ui;
     margin: auto;
-    height: 600px;
+    height: 520px;
 }
 
 .signUp-header {
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 400px;
+    height: 430px;
     width: 300px;
     border: 1.5px solid hsl(199, 16%, 81%);
     padding: 10px;
@@ -67,10 +67,14 @@
     all: unset;
     width: 90%;
 }
+.confirmPasswordInput {
+    all: unset;
+    width: 90%;
+}
 
 .signUp-btn {
     padding: 8px 30px;
-    margin: auto;
+    margin: 18px auto;
     background-color: black;
     color: white;
     border-radius: 15px;
@@ -161,10 +165,14 @@
         all: unset;
         width: 85%;
     }
+    .confirmPasswordInput {
+        all: unset;
+        width: 85%;
+    }
 
     .signUp-btn {
         padding: 8px 40px;
-        margin: auto;
+        margin: 22px auto;
         background-color: black;
         color: white;
         border-radius: 15px;
@@ -193,8 +201,8 @@
         flex-direction: column;
         justify-content: center;
         font-family: system-ui;
-        height: 750px;
-        margin-top: 67px
+        margin-top: 30px;
+        height: auto;
     }
 
     .signUp-header {
@@ -206,18 +214,18 @@
         font-size: 1.2rem;
         font-weight: 600;
         margin-top: 0px;
-        margin-bottom: 30px;
+        margin-bottom: 8px;
     }
 
     .signUp-form {
         display: flex;
-        flex-direction: column;
-        margin: auto;
-        height: 500px;
-        border: 1.5px solid hsl(199, 16%, 81%);
-        width: 350px;
-        padding: 30px;
-        border-radius: 15px;
+    flex-direction: column;
+    margin: auto;
+    height: auto;
+    border: 1.5px solid hsl(199, 16%, 81%);
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
 
     }
 
@@ -253,6 +261,10 @@
     }
     
     .passwordInput {
+        all: unset;
+        width: 90%;
+    }
+    .confirmPasswordInput {
         all: unset;
         width: 90%;
     }

@@ -16,39 +16,65 @@ export const SignUp = () => {
     lastName: "",
     email: "",
     password: "",
+    confirmPassword:""
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
 
   const updateData = (e, element) => {
     setFormData((formData) => ({ ...formData, [element]: e.target.value }));
   };
+  const togglePassword = () => {
+    setShowPassword(prev =>!prev);
+  };
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword(prev =>!prev);
+  };
 
   const clickHandeler = () => {
     if (
-      formData.firstName !== "" &&
-      formData.lastName !== "" &&
-      formData.email !== "" &&
-      formData.password !== "" &&
-      formData.email.includes("@")
+      formData.firstName === "" ||
+      formData.lastName === "" ||
+      formData.email === "" ||
+      formData.password === "" ||
+      !formData.email.includes("@")
     ) {
+   
+        // Toast for invalid form format
+        toast.error(' Invalid Form Format', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+          return
+    } 
+    if(formData.password !==formData.confirmPassword){
+        // Toast for password mismatch
+        toast.error('Passwords are not same', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+          return
+    }
+    
+    else {
       signupHandler(formData);
-    } else {
-      // Toast for invalid form format
-      toast.error(' Invalid Form Format', {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+    
     }
   };
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
+
   return (
     <>
       <div className="signUp-container">
@@ -101,7 +127,21 @@ export const SignUp = () => {
               onChange={(e) => updateData(e, "password")}
             />
             <span className="passwordToggle" onClick={() => togglePassword()}>
-              {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              {showPassword.password ? <AiFillEyeInvisible /> : <AiFillEye />}
+            </span>
+          </div>
+          <label className="input-label"> Confirm Password</label>
+          <div className="passwordContainer">
+            {" "}
+            <input
+              className="confirmPasswordInput"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="**********"
+              value={formData.confirmPassword}
+              onChange={(e) => updateData(e, "confirmPassword")}
+            />
+            <span className="passwordToggle" onClick={() => toggleConfirmPassword()}>
+              {showPassword.confirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
             </span>
           </div>
 
