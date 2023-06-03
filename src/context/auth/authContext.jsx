@@ -24,7 +24,7 @@ export const AuthContextProvider = ({ children }) => {
   const[profileData,setProfileData]=useState(localStorageUserData?.user);
 
  //state to manage the order state locally
-  const [userData,setUserData]=useState({order:[],orderAmount:"",address:[]});
+  const [userData,setUserData]=useState({order:[],orderAmount:"",address:[],paymentId:""});
 
   //state to manage the selected value of userProfile page
 const [selectedValue, setSelectedValue] = useState("Profile");

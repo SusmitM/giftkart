@@ -112,7 +112,7 @@ export const SignUp = () => {
 
         <div className="signInLabel">
           Already have an account?{" "}
-          <span className="signIn-link">
+          <span className="signIn-link" onClick={()=>navigate("/signin")}>
             LoginHere
           </span>
         </div>

@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./UserProfile.css";
 import { useAuthContext } from "../../context/auth/authContext";
 import { useAddressContext } from "../../context/address/addressContext";
 
+
 export const UserProfile = () => {
-  const{userData,selectedValue, setSelectedValue,profileData}=useAuthContext();
+  const{userData,setUserData,selectedValue, setSelectedValue,profileData}=useAuthContext();
   const {addressState,addressDispatch}=useAddressContext();
   const headings = ["Profile", "Address", "Orders"];
   
@@ -59,6 +62,51 @@ console.log(userData)
       PhoneNo: '9876543210',
     });
   };
+
+  //Razorpay payment function
+  const makePayment = (amount)=>{
+        
+    if(amount === ""){
+    alert("please enter amount");
+    }else{
+      const options = {
+        key: "rzp_test_vhFd6AzC7w7Aoy",
+        key_secret:"NFGzAlZkZLHyKgeEO8RuU6zs",
+        amount: amount *100,
+        currency:"INR",
+        name:"GiftKart",
+        description:"For testing purpose",
+        handler: function(response){
+          setUserData(prev=>({...prev,paymentId:response.razorpay_payment_id}))
+
+           // Toast for successful payment
+        toast.success("Payment Successful 🎉🎉", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        },
+        prefill: {
+          name:"Susmit Mukherjee",
+          email:"susmitmukherjee2001@gmail.com",
+          contact:"9823651021"
+        },
+        notes:{
+          address:"Razorpay Corporate office"
+        },
+        theme: {
+          color:"#3399cc"
+        }
+      };
+      var pay = new window.Razorpay(options);
+      pay.open();
+    }
+  }
   return (
     <div className="profileContainer">
       <div className="headingContainer">
@@ -165,10 +213,24 @@ console.log(userData)
             </div>
             )
         }
+        {/* //orders Section */}
         {selectedValue==="Orders" && 
          ( userData.token ===localStorage.getItem("token") && userData["order"][0] ? <div className="orderData">
          <div className="orderData-heading">Total Price: ₹{userData.orderAmount}</div>
-         <div className="paymentStatus">Payment: Pending</div>
+         <div className="paymentStatus" style={{color:userData.paymentId ? "green" :"red",fontSize:"1.2rem",fontWeight:"600"}}>Payment: {userData.paymentId ? "Done":"Not Done"}</div>
+         <div className="paymentId" style={{display:userData.paymentId ? "" :"none"}}>PaymentId: {userData.paymentId}</div>
+         <button className="paymentBtn" style={{display:userData.paymentId ? "none" :""}} onClick={ ()=>makePayment(userData.orderAmount)}>Pay</button>
+         <div className="paymentGuid" style={{display:userData.paymentId ? "none" :""}}>
+          <h3>Follow the following steps to make an Dummy Payment</h3>
+          <ol>
+            <li>Select Card as Payment Mode</li>
+            <li>Input Card Number as 4111 1111 1111 1111</li>
+            <li>Input Expiry as 04/24 </li>
+            <li>Input CVV as 123</li>
+            <li>Then Select Pay without saving card</li>
+            <li>Input the OTP as 12345678</li>
+          </ol>
+         </div>
          <hr/>
          <ul>
            {

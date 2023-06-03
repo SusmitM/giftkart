@@ -39,7 +39,7 @@
     flex-direction: column;
     margin: 10px auto;
     box-shadow: rgb(1, 119, 253) 0px 1px 6px 1px;
-    width: 340px;
+    width: 260px;
     border-radius: 10px;
     padding: 10px;
     align-items: center;
@@ -106,22 +106,48 @@
     font-size: 13px;
     cursor: pointer;
   }
-  .paymentStatus{
-    color: red;
-    font-size: 1.2rem;
-    font-weight: 600;
+  .paymentBtn{
+    background-color: black;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+
   }
+  .paymentGuid{
+    font-family: ui-sans-serif;
+    box-shadow: rgb(1, 119, 253) 0px 1px 6px 1px;
+  }
+
   .orderData-heading{
     font-size: 1.5rem;
     font-family: monospace;
     font-weight: 700;
     color: green;
   }
-
+ 
   @media (min-width:1024px){
     .profileContainer{
       margin: 150px auto;
       width:700px;
   }
+  .individualAddress{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    box-shadow: rgb(1, 119, 253) 0px 1px 6px 1px;
+    width: 340px;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+
+}
+.paymentGuid{
+  padding: 6px;
+  margin: 10px auto;
+}
 
   }
