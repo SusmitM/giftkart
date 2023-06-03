@@ -63,6 +63,9 @@ export const ProductCard = ({ productData, page }) => {
             <FontAwesomeIcon icon={faStar} style={{ color: "#ffffff" }} />
           </span>
         </div>
+        {outOfStock && (
+        <span className="out-of-stock-label">BACK END OF JUNE</span>
+      )}
 
         <div className="product-price">
           <span className="currentPrice">₹{currentPrice}</span> ₹
@@ -130,9 +133,7 @@ export const ProductCard = ({ productData, page }) => {
         </span>
       </Tippy>
 
-      {outOfStock && (
-        <span className="out-of-stock-label">BACK END OF JUNE</span>
-      )}
+      
       {fastDelivery && (
         <span className="fast-delivery-label">FAST DELIVERY</span>
       )}

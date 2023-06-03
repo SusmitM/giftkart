@@ -132,7 +132,7 @@ margin-top: -13px;
     .filter-box {
         display: flex;
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 65px;
         top: 0;
         left: 0;
         padding: 0px;
@@ -141,6 +141,7 @@ margin-top: -13px;
         transform: translate(0%, 0%);
         z-index: 0;
         height: 100%;
+
 
     }
 

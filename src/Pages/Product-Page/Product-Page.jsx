@@ -54,7 +54,7 @@ export const ProductPage = () => {
      }
      // sorting data based on rating
      if(Rating){
-      originalData=originalData.filter(({rating})=>rating>Rating)
+      originalData=originalData.filter(({rating})=>rating>=Rating)
      }
 
     return originalData;

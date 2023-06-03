@@ -39,7 +39,7 @@ export const Navigation = () => {
       </div>
 
       <ul className="nav-category-links" style={{ listStyle: "none" }}>
-        <li className="nav-category-link"  onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Cartoon" })}}>Cartoon</li>
+        <li className="nav-category-link"  onClick={() => { filterDispatch({ type: "Category-Filter", payload: "Cartoon" });navigate("/products");}}>Cartoon</li>
         <li className="nav-category-link" onClick={() => {navigate("/products"); filterDispatch({ type: "Category-Filter", payload: "Sport" })}}>Sports</li>
         <li className="nav-category-link"  onClick={() => navigate("/products")}>
           <div className="dropdown">

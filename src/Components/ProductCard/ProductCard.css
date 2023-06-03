@@ -4,7 +4,7 @@
     justify-content: space-between;
     height: 460px;
     width: 310px;
-    margin:inherit;
+    margin: inherit;
     text-align: center;
     font-family: -apple-system,
         BlinkMacSystemFont, sans-serif;
@@ -63,16 +63,18 @@
     color: grey;
 
 }
+
 .out-of-stock-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    font-family: system-ui;
-    position: absolute;
+    font-size: 0.8rem;
     background-color: rgb(113 60 223);
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 4px 7px;
     color: white;
-    padding: 5px;
     border-radius: 10px;
-    margin: 6px;
+    position: relative;
+    left: 180px;
+    bottom: 22px;
 }
 
 .fast-delivery-label {
@@ -98,16 +100,17 @@
     border-radius: 12px;
 }
 
-.tooltip{
+.tooltip {
     background-color: black;
     color: white;
     font-size: 0.5rem;
-    padding:5px;
+    padding: 5px;
     font-weight: 500;
     border-radius: 5px;
 
 }
-.overlay-singleProduct{
+
+.overlay-singleProduct {
     display: none;
 }
 
@@ -124,17 +127,19 @@
     .overlay-singleProduct {
         display: none;
     }
+
     .product-card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 460px;
         width: 310px;
-        margin:initial;
+        margin: initial;
         text-align: center;
         font-family: -apple-system,
             BlinkMacSystemFont, sans-serif;
     }
+
     .product-name {
         font-size: 1rem;
         font-weight: 600;
@@ -171,14 +176,14 @@
     }
 
     .fast-delivery-label {
-    font-weight: 500;
-    font-family: system-ui;
-    position: absolute;
-    background-color: green;
-    color: white;
-    padding: 5px;
-    border-radius: 9px;
-    margin: 3px;
+        font-weight: 500;
+        font-family: system-ui;
+        position: absolute;
+        background-color: green;
+        color: white;
+        padding: 5px;
+        border-radius: 9px;
+        margin: 3px;
     }
 
     .product-rating {
@@ -192,12 +197,12 @@
         font-weight: 500;
         border-radius: 11px
     }
-   
-    .tooltip{
+
+    .tooltip {
         background-color: black;
         color: white;
         font-size: 0.6rem;
-        padding:8px;
+        padding: 8px;
         font-weight: 550;
         border-radius: 5px;
 
@@ -214,7 +219,7 @@
         justify-content: space-between;
         height: 370px;
         width: 270px;
-        margin:inherit;
+        margin: inherit;
         text-align: center;
         font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -226,9 +231,9 @@
     }
 
     .wishlist-btn {
-    color: red;
-    bottom: 338px;
-    left: 114px;
+        color: red;
+        bottom: 338px;
+        left: 114px;
 
     }
 
@@ -238,14 +243,13 @@
     }
 
     .out-of-stock-label {
-        font-weight: 500;
-        font-family: system-ui;
-        position: absolute;
-        background-color: rgb(113 60 223);
-        color: white;
-        padding: 5px;
-        border-radius: 9px;
-        margin: 3px;
+        left: 130px;
+        bottom: 18px;
+        padding: 3px 3px;
+        font-size: 0.75rem;
+        border-radius: 10px;
+        position: relative;
+
     }
 
     .product-name {
@@ -284,14 +288,14 @@
     }
 
     .fast-delivery-label {
-    font-weight: 500;
-    font-family: system-ui;
-    position: absolute;
-    background-color: green;
-    color: white;
-    padding: 5px;
-    border-radius: 9px;
-    margin: 3px;
+        font-weight: 500;
+        font-family: system-ui;
+        position: absolute;
+        background-color: green;
+        color: white;
+        padding: 5px;
+        border-radius: 9px;
+        margin: 3px;
     }
 
     .product-rating {
@@ -332,11 +336,11 @@
         color: white;
     }
 
-    .tooltip{
+    .tooltip {
         background-color: black;
         color: white;
         font-size: 0.8rem;
-        padding:8px;
+        padding: 8px;
         font-weight: 550;
         border-radius: 5px;
 

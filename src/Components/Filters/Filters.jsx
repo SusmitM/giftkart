@@ -25,6 +25,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
   const ratingFilter = (rating) => {
     filterDispatch({ type: "Rating-Filter", payload: rating });
   };
+  
   const priceFilter = (e) => {
     filterDispatch({ type: "Price-Filter", payload: e.target.value });
   };
@@ -41,7 +42,6 @@ export const Filters = ({ toggleFilterDisplay }) => {
   const toggleFastDelivery = () => {
     filterDispatch({ type: "Toggle-FastDelivery" });
   };
-
   return (
     <div className="filter-box">
       <div className="filter-container">
@@ -118,7 +118,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="sport"
                 name="sport"
                 onChange={() => categoryFilter("Sport")}
-                checked={Category.find(genre=>genre==="Sport")}
+                checked={Category.find(genre=>genre==="Sport") ? true :false}
                
               />
               Sport
@@ -129,7 +129,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="cartoon"
                 name="cartoon"
                 onChange={() => categoryFilter("Cartoon")}
-                checked={Category.find(genre=>genre==="Cartoon")}
+                checked={Category.find(genre=>genre==="Cartoon") ? true :false}
               />
               Cartoon
             </label>
@@ -139,7 +139,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="modern"
                 name="modern"
                 onChange={() => categoryFilter("Modern")}
-                checked={Category.find(genre=>genre==="Modern")}
+                checked={Category.find(genre=>genre==="Modern") ? true :false}
               />
               Modern
             </label>
@@ -149,7 +149,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="classic"
                 name="classic"
                 onChange={() => categoryFilter("Classic")}
-                checked={Category.find(genre=>genre==="Classic")}
+                checked={Category.find(genre=>genre==="Classic") ? true :false}
               />
               Classic
             </label>
@@ -174,6 +174,8 @@ export const Filters = ({ toggleFilterDisplay }) => {
               />
             Include Out of Stock
             </label>
+        
+            <span className="filter-title" style={{marginTop:"5px"}}>Delivery Preference:</span>
             <label>
               <input
                 type="checkbox"
@@ -200,7 +202,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="mug"
                 name="mug"
                 onChange={() => productTypeFilter("Mugs")}
-                checked={ProductType.find(productType=>productType==="Mugs")}
+                checked={ProductType.find(productType=>productType==="Mugs" ) ? true :false}
               />
               Mugs
             </label>
@@ -210,7 +212,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="frame"
                 name="frame"
                 onChange={() => productTypeFilter("Frames")}
-                checked={ProductType.find(productType=>productType==="Frames")}
+                checked={ProductType.find(productType=>productType==="Frames" ) ? true :false}
               />
               Frames
             </label>
@@ -220,7 +222,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="magnets"
                 name="magnets"
                 onChange={() => productTypeFilter("Magnets")}
-                checked={ProductType.find(productType=>productType==="Magnets")}
+                checked={ProductType.find(productType=>productType==="Magnets" ) ? true :false}
               />
               Magnets
             </label>
@@ -230,7 +232,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
                 value="lamps"
                 name="lamps"
                 onChange={() => productTypeFilter("Lamps")}
-                checked={ProductType.find(productType=>productType==="Lamps")}
+                checked={ProductType.find(productType=>productType==="Lamps" ) ? true :false}
               />
               Lamps
             </label>
