@@ -1,8 +1,12 @@
 import { v4 as uuid } from "uuid";
+import { useAuthContext } from "../context/auth/authContext";
+
 export const AddressReducer=(addressState,action)=>{
+const{profileData}=useAuthContext();
+
     switch (action.type) {
       case "addToAddressState":
-          return {...addressState,address:[...addressState.address,{id:uuid(),...action.payload}]}  
+          return {...addressState,address:[...addressState.address,{id:uuid(), userId:profileData._id,...action.payload}]}  
       case "UpdateAddressState":
             return {address:addressState.address.map(addressData=>addressData.id===action.payload.id ? action.payload : addressData)}      
   
@@ -12,4 +16,4 @@ export const AddressReducer=(addressState,action)=>{
   
   }
   
-  export const initialAddressState={address:[{"id":uuid(),"Name":"Adarsh Balika","City":"Kolkata","State":"W.B","Pincode":"700115","PhoneNo":1234567890}]}; 
+  export const initialAddressState={address:[{"id":uuid(),userId:"default","Name":"Aman Kumar","City":"Raipur","State":"Chhattisgarh","Pincode":"700115","PhoneNo":951753426}]}; 

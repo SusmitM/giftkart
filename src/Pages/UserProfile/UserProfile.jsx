@@ -7,6 +7,7 @@ import { useAddressContext } from "../../context/address/addressContext";
 
 
 export const UserProfile = () => {
+  
   const{userData,setUserData,selectedValue, setSelectedValue,profileData}=useAuthContext();
   const {addressState,addressDispatch}=useAddressContext();
   const headings = ["Profile", "Address", "Orders"];
@@ -30,7 +31,8 @@ console.log(userData)
     }
     else{
       addressDispatch({type:"addToAddressState",
-      payload:formData})
+      payload:formData
+    })
        setShowForm(false);
        setEditing(false)
     }
@@ -55,9 +57,9 @@ console.log(userData)
   const handleDummyValue = () => {
     setFormData({
       Name: 'John Doe',
-      City: 'Sample City',
-      State: 'Sample State',
-      Pincode: '12345',
+      City: 'Bengaluru',
+      State: 'Karnataka',
+      Pincode: '503971',
       PhoneNo: '9876543210',
     });
   };
@@ -106,6 +108,7 @@ console.log(userData)
       pay.open();
     }
   }
+
   return (
     <div className="profileContainer">
       <div className="headingContainer">
@@ -140,7 +143,7 @@ console.log(userData)
                <button className="addNewAddressBtn" onClick={() =>{ setShowForm(true);setEditing(false)}}>Add New Address</button>
               <ol className="addressList">
                 {
-                  addressState.address.map(addressData=><li className="individualAddress">
+                  addressState.address.map(addressData=><li className="individualAddress" style={{display:addressData.userId === profileData._id || addressData.userId === "default" ? "" :"none"}}>
                     <div>Name: {addressData.Name}</div>
                     <div>City: {addressData.City}</div>
                     <div>State: {addressData.State}</div>
