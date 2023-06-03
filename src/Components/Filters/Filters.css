@@ -24,10 +24,9 @@
 
 
 .filter-heading {
-    margin: 1px;
-    font-size: 1.1rem;
+    color: #000;
+    font-size: 1rem;
     font-weight: 500;
-    color: black;
 
 }
 
@@ -38,13 +37,13 @@
 }
 
 .clearBtn {
-    margin-left: 30px;
-    color: white;
-    font-size: 0.70rem;
     border-radius: 11px;
-    padding: 5px;
-    background-color: red;
+    font-size: .7rem;
     font-weight: 500;
+    margin-left: 10px;
+    padding: 3px;
+    color: white;
+    background-color: red;
     font-family: sans-serif;
 }
 
@@ -132,7 +131,7 @@ margin-top: -13px;
     .filter-box {
         display: flex;
         flex-direction: column;
-        margin-top: 65px;
+        margin-top: 60px;
         top: 0;
         left: 0;
         padding: 0px;
@@ -146,6 +145,8 @@ margin-top: -13px;
     }
 
     .filter-container {
+        overflow-y: auto;
+    height: 550px;
         display: flex;
         flex-direction: column;
         padding: 15px;
@@ -155,7 +156,7 @@ margin-top: -13px;
     }
 
     .filter-heading {
-        margin: 5px;
+        margin: 0px;
         font-size: 1.25rem;
         font-weight: 600;
         color: black;
