@@ -145,7 +145,8 @@ margin-top: -13px;
     }
 
     .filter-container {
-        height: 42rem;
+        overflow-y: auto;
+        height: 37rem;
         display: flex;
         flex-direction: column;
         padding: 15px;
