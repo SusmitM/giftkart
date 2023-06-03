@@ -31,12 +31,12 @@ export const Navigation = () => {
         pauseOnHover
         theme="light"
       />
-      <div className="nav-logo-container" onClick={() => navigate("/")}>
-        <p className="nav-logo">
+     
+        <p className="nav-logo" onClick={()=>navigate("/")}>
           <BsGift />
           GiftKart
         </p>
-      </div>
+      
 
       <ul className="nav-category-links" style={{ listStyle: "none" }}>
         <li className="nav-category-link"  onClick={() => { filterDispatch({ type: "Category-Filter", payload: "Cartoon" });navigate("/products");}}>Cartoon</li>
