@@ -102,6 +102,6 @@ export const Navigation = () => {
       
         </Tippy>
         </span>
-    </div>
+    </div> 
   );
 };
