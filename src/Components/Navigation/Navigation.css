@@ -7,11 +7,6 @@
 
 }
 
-/* .nav-logo-container {
-    font-size: 25px;
-    font-weight: 550;
-    cursor: pointer;
-} */
 
 .nav-logo {
     font-size: 25px;
@@ -78,15 +73,6 @@
     .nav-category-links {
         display: none;
     }
-
-    /* .nav-logo-container {
-        font-size: 30px;
-
-    } */
-    /* .nav-logo{
-         font-size: 30px;
-
-    } */
 
     .nav-link-Container {
         display: flex;
