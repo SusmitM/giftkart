@@ -23,8 +23,8 @@ An e-commerce gift store for your loved ones
 ## **How to install and run locally ?**
 
 ```
-$ git clone https://github.com/SusmitM/Ecommerce--gift-store.git
-$ cd src
+$ git clone https://github.com/SusmitM/giftkart.git
+$ cd giftkart
 $ npm install
 $ npm start
 ```
@@ -41,7 +41,7 @@ $ npm start
   - Product Rating
 - Search product:
   - Voice Search
-  - By Product Name or Product Type
+  - Search by Product Name or Product Type
 - Individual product page
 - Cart Management
 - Wishlist Management
