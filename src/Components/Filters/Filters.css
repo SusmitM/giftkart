@@ -60,10 +60,11 @@
     font-family: sans-serif;
 
 }
-.rangeLabel{
+
+.rangeLabel {
     display: flex;
-justify-content: space-between;
-margin-top: -13px;
+    justify-content: space-between;
+    margin-top: -13px;
 }
 
 
@@ -71,7 +72,7 @@ margin-top: -13px;
 
 
 @media (min-width:768px) {
-    
+
 
     .filter-container {
         display: flex;
@@ -101,7 +102,7 @@ margin-top: -13px;
         font-family: sans-serif;
     }
 
-    
+
 
     .filter-title {
         color: black;
@@ -136,7 +137,7 @@ margin-top: -13px;
         left: 0;
         padding: 0px;
         height: 100%;
-        width: max-content;
+        width: 210px;
         transform: translate(0%, 0%);
         z-index: 0;
 
@@ -161,21 +162,22 @@ margin-top: -13px;
         color: black;
 
     }
-    .rangeLabel{
+
+    .rangeLabel {
         display: flex;
-    justify-content: space-around;
-    padding: 0px;
-    margin: -23px
+        justify-content: space-around;
+        padding: 0px;
+        margin: -23px
     }
 
     .clearBtn {
-        margin-left: 60px;
-        font-size: 12px;
+        margin-left: 15px;
+        font-size: 11px;
         font-family: monospace;
         background-color: red;
         color: white;
-        border-radius: 20px;
-        padding: 6px;
+        border-radius: 15px;
+        padding: 3px;
 
     }
 

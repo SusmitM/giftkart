@@ -233,7 +233,7 @@
 
     }
     .socialProfiles span:hover{
-        color: blue;
+       
         cursor: pointer;
     }
 }

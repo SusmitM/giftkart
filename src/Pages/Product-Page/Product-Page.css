@@ -71,12 +71,13 @@
     .filter-section{
         display: inline-block;
         grid-area: filter;
-        width: 250px;
+        width: 210px;
     
         
     }
     .productDisplay-section{
         grid-area: product;
+        overflow-x: hidden;
     
     }
     .filterBtn{
