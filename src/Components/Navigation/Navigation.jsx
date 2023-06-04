@@ -1,5 +1,6 @@
 import "./Navigation.css";
 import { ToastContainer, toast } from "react-toastify";
+import Tippy from "@tippyjs/react";
 import { IoIosArrowDown } from "react-icons/io";
 import {FaPowerOff,FaSignInAlt} from "react-icons/fa";
 import { FiSearch, FiShoppingBag } from "react-icons/fi";
@@ -60,27 +61,47 @@ export const Navigation = () => {
       </ul>
 
       <ul className="nav-link-Container" style={{ listStyle: "none" }}>
+      <Tippy content={<span className="tooltip">Search</span>}>
         <li className="nav-link" onClick={() => navigate("/search")}>
           <FiSearch />
         </li>
+        </Tippy>
+       
         <span onClick={() => navigate("/cart")}>
+        <Tippy content={<span className="tooltip">Cart</span>}>
         <li className="nav-link" >
           <FiShoppingBag />
         </li>
+        </Tippy>
         <span className="cartCount">{cartSize}</span>
         </span>
        <span  onClick={() => navigate("/wishlist")}>
+       <Tippy content={<span className="tooltip">Wishlist</span>}>
        <li className="nav-link">
           <BsHeart />
         </li>
+        </Tippy>
         <span  className="wishlistCount">{wishlistSize}</span>
         
        </span>
-        <li className="nav-link" onClick={() => navigate("/userProfile")}>
+       <span onClick={() => navigate("/userProfile")}>
+       <Tippy content={<span className="tooltip">Profile</span>}>
+        <li className="nav-link" >
+      
           <BsPerson />
+        
         </li>
+        </Tippy>
+        </span>
+        
       </ul>
-      <span className="loginAction" onClick={()=>{loginToken ? handelLogout():navigate("/signin") }}>{loginToken ?  <FaPowerOff/> :<FaSignInAlt />}</span>
+      
+      <span className="loginAction" onClick={()=>{loginToken ? handelLogout():navigate("/signin") }}>
+      <Tippy content={<span className="tooltip">{loginToken ? "Sign-Out" : "Sign-In"}</span>}>
+        <span>  {loginToken ?  <FaPowerOff/> :<FaSignInAlt />}</span>
+      
+        </Tippy>
+        </span>
     </div>
   );
 };
