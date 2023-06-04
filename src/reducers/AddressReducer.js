@@ -9,6 +9,8 @@ const{profileData}=useAuthContext();
           return {...addressState,address:[...addressState.address,{id:uuid(), userId:profileData._id,...action.payload}]}  
       case "UpdateAddressState":
             return {address:addressState.address.map(addressData=>addressData.id===action.payload.id ? action.payload : addressData)}      
+    case "deleteAddressState":
+                return {address:addressState.address.filter(addressData=>addressData.id!==action.payload)}           
   
       default:
          return addressState;

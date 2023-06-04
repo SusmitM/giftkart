@@ -43,6 +43,13 @@ console.log(userData)
     setFormData(addressState.address.find(item=>item.id===selectedId))
 
   }
+  const deleteForm=(selectedId)=>{
+    
+    addressDispatch({type:"deleteAddressState",
+    payload:selectedId
+  })
+
+  }
 
   const handleCancel = () => {
     setFormData({
@@ -149,7 +156,10 @@ console.log(userData)
                     <div>State: {addressData.State}</div>
                     <div>PinCode: {addressData.Pincode}</div>
                     <div>PhoneNo: {addressData.PhoneNo}</div>
-                    <button  className="editBtn"  onClick={()=>editForm(addressData.id)}>Edit</button>
+                   <div className="addressBtnContainer">
+                   <button  className="editBtn"  onClick={()=>editForm(addressData.id)}>Edit</button>
+                    <button  className="deleteBtn"  onClick={()=>deleteForm(addressData.id)}>Delete</button>
+                   </div>
                     </li>)
                 }
               </ol>
