@@ -3,10 +3,19 @@ import { PriceCard } from "../Cart/components/PriceCard";
 import { useAddressContext } from "../../context/address/addressContext";
 import { useState } from "react";
 import { useAuthContext } from "../../context/auth/authContext";
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
+
 export const Checkout = () => {
-  const {userData,setUserData}=useAuthContext()
+  const {userData,setUserData,setSelectedValue}=useAuthContext()
   const { addressState } = useAddressContext();
   const [selectedAddress,setSelectedAddress]=useState();
+  const navigate=useNavigate();
+
  
 
 
@@ -27,8 +36,19 @@ export const Checkout = () => {
                 <div className="addressPhoneNo">PhoneNo: {addressData.PhoneNo}</div>
               </li>
             ))}
+             <button
+              className="addNewAddressBtn"
+              onClick={() => {
+                setSelectedValue("Address");
+                navigate("/userProfile")
+                
+          
+              }}
+            > Add Address</button>
           </ol>
+         
         </div>
+       
         <div className="priceDetailBox">
           <PriceCard page="checkoutPage" selectedAddress={selectedAddress} />
         </div>
