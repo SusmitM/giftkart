@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import axios from 'axios';
+import { GetItemData } from "../../services/dataService/GetItemData";
 
 //Creating the DataContext Context
 const DataContext=createContext();
@@ -34,7 +35,7 @@ export const DataContextProvider=( {children})=>{
    // function to get the products data from backend and add the data to productState
     const getData=async ()=>{
         try{
-            const {status,data}=await axios.get(`/api/products`);
+            const {status,data}=await GetItemData();
            if(status===200){
             productDispatch({
                 type:"Initialize-Products-Data",

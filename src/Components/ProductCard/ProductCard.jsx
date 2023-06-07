@@ -84,7 +84,7 @@ export const ProductCard = ({ productData, page }) => {
           }
           style={{ display: page === "wishlistPage" ? "none" : "" }}
         >
-          {itemPresentInCart ? "Go to Cart" : "ADD to CART"}
+          {itemPresentInCart ? "Go to Cart" : "Add To Cart"}
         </button>
         <button
           className="add-toCart-btn"
@@ -96,7 +96,7 @@ export const ProductCard = ({ productData, page }) => {
           }
           style={{ display: page === "wishlistPage" ? "" : "none" }}
         >
-          {itemPresentInCart ? "Already in Cart" : "ADD to CART"}
+          {itemPresentInCart ? "Increment Item Count" : "Add To Cart"}
         </button>
       </div>
       <Tippy
