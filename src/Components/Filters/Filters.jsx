@@ -1,6 +1,7 @@
 import "./Filters.css";
 import { useState } from "react";
 import { useFilterContext } from "../../context/filters/filterContext.jsx";
+import { useDataContext } from "../../context/data/dataContext";
 export const Filters = ({ toggleFilterDisplay }) => {
   const { filterDispatch, filterState } = useFilterContext();
   const {
@@ -12,7 +13,8 @@ export const Filters = ({ toggleFilterDisplay }) => {
     FastDelivery,
     Rating,
   } = filterState;
-
+  
+  const{categories,productTypes}=useDataContext();
 
   // function to change the filterState values
   const clearAll = () => {
@@ -108,51 +110,22 @@ export const Filters = ({ toggleFilterDisplay }) => {
         </div>
         <div className="category-filter">
           <span className="filter-title">Categories :</span>
+
+
           <div
             className="category-value-container"
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <label>
-              <input
+            {
+              categories.map(data=><label key={data.id}><input
                 type="checkbox"
-                value="sport"
-                name="sport"
-                onChange={() => categoryFilter("Sport")}
-                checked={Category.find(genre=>genre==="Sport") ? true :false}
+                value= {`${data.categoryName}`}
+                name={`${data.categoryName}`}
+                onChange={() => categoryFilter(`${data.categoryName}`)}
+                checked={Category.find(genre=>genre===`${data.categoryName}`) ? true :false}
                
-              />
-              Sport
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="cartoon"
-                name="cartoon"
-                onChange={() => categoryFilter("Cartoon")}
-                checked={Category.find(genre=>genre==="Cartoon") ? true :false}
-              />
-              Cartoon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="modern"
-                name="modern"
-                onChange={() => categoryFilter("Modern")}
-                checked={Category.find(genre=>genre==="Modern") ? true :false}
-              />
-              Modern
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="classic"
-                name="classic"
-                onChange={() => categoryFilter("Classic")}
-                checked={Category.find(genre=>genre==="Classic") ? true :false}
-              />
-              Classic
-            </label>
+              />{data.categoryName}</label>)
+            }
           </div>
           <hr />
         </div>
@@ -196,46 +169,22 @@ export const Filters = ({ toggleFilterDisplay }) => {
             className="prodType-value-container"
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <label>
-              <input
-                type="checkbox"
-                value="mug"
-                name="mug"
-                onChange={() => productTypeFilter("Mugs")}
-                checked={ProductType.find(productType=>productType==="Mugs" ) ? true :false}
-              />
-              Mugs
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="frame"
-                name="frame"
-                onChange={() => productTypeFilter("Frames")}
-                checked={ProductType.find(productType=>productType==="Frames" ) ? true :false}
-              />
-              Frames
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="magnets"
-                name="magnets"
-                onChange={() => productTypeFilter("Magnets")}
-                checked={ProductType.find(productType=>productType==="Magnets" ) ? true :false}
-              />
-              Magnets
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                value="lamps"
-                name="lamps"
-                onChange={() => productTypeFilter("Lamps")}
-                checked={ProductType.find(productType=>productType==="Lamps" ) ? true :false}
-              />
-              Lamps
-            </label>
+
+            {
+              productTypes.map(product=>{
+                return( <label key={product}>
+
+                <input
+                  type="checkbox"
+                  value={product}
+                  name={product}
+                  onChange={() => productTypeFilter(product)}
+                  checked={ProductType.find(productType=>productType===product ) ? true :false}
+                />
+               {product}
+              </label>)
+              })
+            }
           </div>
           <hr />
         </div>

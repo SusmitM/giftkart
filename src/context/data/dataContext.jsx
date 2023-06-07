@@ -33,6 +33,9 @@ export const DataContextProvider=( {children})=>{
     // state that holds the category values
     const [categories,setCategories]=useState([]);
 
+    //product types
+    const productTypes=["Mugs","Frames","Magnets","Lamps" ]
+
     //loading state
     const [Loading,setLoading]=useState(true);
 
@@ -77,7 +80,7 @@ const getCategoryData=async ()=>{
 
 
     return(
-        <DataContext.Provider value={{productsData:productState.productData[0],Loading,categories}}>
+        <DataContext.Provider value={{productsData:productState.productData[0],Loading,categories,productTypes}}>
             {children}
         </DataContext.Provider>
     )

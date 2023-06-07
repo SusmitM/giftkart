@@ -18,7 +18,7 @@ export const Navigation = () => {
   const { filterDispatch } = useFilterContext();
   const { cartSize } = useCartContext();
   const { wishlistSize } = useWishlistContext();
-  const { categories } = useDataContext();
+  const { categories,productTypes } = useDataContext();
 
   return (
     <div className="navigation">
@@ -49,7 +49,7 @@ export const Navigation = () => {
       <ul className="nav-category-links" style={{ listStyle: "none" }}>
         {categories.map((data) =>
           data.id < 3 ? (
-            <li
+            <li key={data.id}
               className="nav-category-link"
               onClick={() => {
                 filterDispatch({
@@ -73,7 +73,23 @@ export const Navigation = () => {
               <IoIosArrowDown />
             </button>
             <div className="dropdown-content">
-              <div
+
+             {
+              productTypes.map(product=><div
+                onClick={() => {
+                  navigate("/products");
+                  filterDispatch({
+                    type: "ProductType-Filter",
+                    payload: product,
+                  });
+                }}
+              >
+                {product}
+              </div>)
+             }
+
+
+              {/* <div
                 onClick={() => {
                   navigate("/products");
                   filterDispatch({
@@ -116,14 +132,14 @@ export const Navigation = () => {
                 }}
               >
                 Lamps
-              </div>
+              </div> */}
             </div>
           </div>
         </li>
 
         {categories.map((data) =>
           data.id >= 3 ? (
-            <li
+            <li key={data.id}
               className="nav-category-link"
               onClick={() => {
                 filterDispatch({

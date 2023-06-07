@@ -31,7 +31,7 @@ export const Home = () => {
         <h2>Featured Categories</h2>
 
         {categories.map((data) => (
-          <div
+          <div key={data.id}
             className={`${data.categoryName}-Category`}
             onClick={() => {
               navigate("/products");
