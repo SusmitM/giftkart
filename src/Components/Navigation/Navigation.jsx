@@ -73,7 +73,7 @@ export const Navigation = () => {
           <FiShoppingBag />
         </li>
         </Tippy>
-        <span className="cartCount">{cartSize}</span>
+        <span style={{display: loginToken ? "" :"none"}} className="cartCount">{cartSize}</span>
         </span>
        <span  onClick={() => navigate("/wishlist")}>
        <Tippy content={<span className="tooltip">Wishlist</span>}>
@@ -81,7 +81,7 @@ export const Navigation = () => {
           <BsHeart />
         </li>
         </Tippy>
-        <span  className="wishlistCount">{wishlistSize}</span>
+        <span  style={{display: loginToken ? "" :"none"}}  className="wishlistCount">{wishlistSize}</span>
         
        </span>
        <span onClick={() => navigate("/userProfile")}>
