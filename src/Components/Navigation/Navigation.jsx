@@ -18,7 +18,7 @@ export const Navigation = () => {
   const { filterDispatch } = useFilterContext();
   const { cartSize } = useCartContext();
   const { wishlistSize } = useWishlistContext();
-  const { categories,productTypes } = useDataContext();
+  const { categories, productTypes } = useDataContext();
 
   return (
     <div className="navigation">
@@ -49,7 +49,8 @@ export const Navigation = () => {
       <ul className="nav-category-links" style={{ listStyle: "none" }}>
         {categories.map((data) =>
           data.id < 3 ? (
-            <li key={data.id}
+            <li
+              key={data.id}
               className="nav-category-link"
               onClick={() => {
                 filterDispatch({
@@ -73,73 +74,27 @@ export const Navigation = () => {
               <IoIosArrowDown />
             </button>
             <div className="dropdown-content">
-
-             {
-              productTypes.map(product=><div
-                onClick={() => {
-                  navigate("/products");
-                  filterDispatch({
-                    type: "ProductType-Filter",
-                    payload: product,
-                  });
-                }}
-              >
-                {product}
-              </div>)
-             }
-
-
-              {/* <div
-                onClick={() => {
-                  navigate("/products");
-                  filterDispatch({
-                    type: "ProductType-Filter",
-                    payload: "Mugs",
-                  });
-                }}
-              >
-                Mugs
-              </div>
-              <div
-                onClick={() => {
-                  navigate("/products");
-                  filterDispatch({
-                    type: "ProductType-Filter",
-                    payload: "Frames",
-                  });
-                }}
-              >
-                Frames
-              </div>
-              <div
-                onClick={() => {
-                  navigate("/products");
-                  filterDispatch({
-                    type: "ProductType-Filter",
-                    payload: "Magnets",
-                  });
-                }}
-              >
-                Magnets
-              </div>
-              <div
-                onClick={() => {
-                  navigate("/products");
-                  filterDispatch({
-                    type: "ProductType-Filter",
-                    payload: "Lamps",
-                  });
-                }}
-              >
-                Lamps
-              </div> */}
+              {productTypes.map((product) => (
+                <div
+                  onClick={() => {
+                    navigate("/products");
+                    filterDispatch({
+                      type: "ProductType-Filter",
+                      payload: product,
+                    });
+                  }}
+                >
+                  {product}
+                </div>
+              ))}
             </div>
           </div>
         </li>
 
         {categories.map((data) =>
           data.id >= 3 ? (
-            <li key={data.id}
+            <li
+              key={data.id}
               className="nav-category-link"
               onClick={() => {
                 filterDispatch({

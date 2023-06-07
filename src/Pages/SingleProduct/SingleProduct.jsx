@@ -9,7 +9,7 @@ export const SingleProduct = () => {
   const {productId}=useParams();
   const {productsData}=useDataContext();
   const selectedProduct=productsData.find(product=>product._id===productId); 
-  console.log( selectedProduct)
+ 
  
   return (
     <>
