@@ -16,7 +16,7 @@ export const UserProfile = () => {
   const { addressState, addressDispatch } = useAddressContext();
   const headings = ["Profile", "Address", "Orders"];
 
-  console.log(userData);
+
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({

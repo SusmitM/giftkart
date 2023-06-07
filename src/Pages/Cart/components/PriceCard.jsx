@@ -27,12 +27,15 @@ export const PriceCard = ({ page, selectedAddress }) => {
         order: [cartState.cart],
         orderAmount: TotalCurrentPrice,
         address: [selectedAddress],
-        token:loginToken
+        token:loginToken,
+        paymentId:""
       }));
      
       setSelectedValue("Orders")
       clearCart()
       navigate("/userProfile")
+     
+
       // Toast for successful order placement
       toast.success("Order Placed Successfully 🎉🎉", {
         position: "top-center",
