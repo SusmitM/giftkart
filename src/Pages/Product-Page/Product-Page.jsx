@@ -49,8 +49,8 @@ export const ProductPage = () => {
       originalData=originalData.sort((item1,item2)=>Sort==="LowToHigh" ? item1.currentPrice-item2.currentPrice :  item2.currentPrice-item1.currentPrice)
     }
      // sorting data based on price range
-     if(PriceRange>0){
-      originalData=originalData.filter(({currentPrice})=>currentPrice>PriceRange)
+     if(PriceRange<2000){
+      originalData=originalData.filter(({currentPrice})=>currentPrice<=PriceRange)
      }
      // sorting data based on rating
      if(Rating){

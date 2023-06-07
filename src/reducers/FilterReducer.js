@@ -49,7 +49,7 @@ export const filterReducer = (filterState, action) => {
 
 export const initialFilterState = {
     Sort: null,
-    PriceRange: 0,
+    PriceRange: 2000,
     Category: [],
     ProductType: [],
     OutOfStock: false,

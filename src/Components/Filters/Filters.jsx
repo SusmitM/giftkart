@@ -101,7 +101,7 @@ export const Filters = ({ toggleFilterDisplay }) => {
             />
             <div className="rangeLabel">
               <p>₹ 50</p>
-              <p>₹ 2500</p>
+              <p>₹ 2000</p>
             </div>
           </div>
           <hr />
